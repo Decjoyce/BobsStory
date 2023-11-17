@@ -7,20 +7,21 @@ public class RoomTeleport : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera receiverCam;
     [SerializeField] Transform receiver;
+    [SerializeField] bool interactToTeleport;
 
     //Checks if player enters collider, if so calls the function TeleportPlayer
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (interactToTeleport && other.CompareTag("Player"))
         {
-            TeleportPlayer(other.gameObject);
+            TeleportPlayer();
         }
     }
 
     //Sets the players position to the receiver, changes from the current cam to the receiver cam and sets the current cam to the receiver cam
-    void TeleportPlayer(GameObject player)
+    public void TeleportPlayer()
     {
-        player.transform.position = receiver.position;
+        GameManager.instance.playerRef.transform.position = receiver.position;
         GameManager.instance.currentCam.Priority = 0;
         receiverCam.Priority = 50;
         GameManager.instance.currentCam = receiverCam;

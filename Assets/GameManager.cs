@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public GameObject playerRef;
+
     public CinemachineVirtualCamera currentCam;
     public string currentRoom;
 
