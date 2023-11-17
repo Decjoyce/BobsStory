@@ -11,12 +11,14 @@ public class PlayerMovement_Grid : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed);
+            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed);
+            transform.Translate(Vector3.forward * speed);
             graphics.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - speed);
+            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - speed);
+            transform.Translate(-Vector3.forward * speed);
             graphics.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (Input.GetKeyDown(KeyCode.D))

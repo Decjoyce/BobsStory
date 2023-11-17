@@ -5,14 +5,14 @@ using Cinemachine;
 
 public class RoomTeleport : MonoBehaviour
 {
-    [SerializeField] CinemachineVirtualCamera receiverCam;
     [SerializeField] Transform receiver;
     [SerializeField] bool interactToTeleport;
+    [SerializeField] string roomName; //Determines which room it will switch to {Class, Hallway, Canteen}
 
     //Checks if player enters collider, if so calls the function TeleportPlayer
     private void OnTriggerEnter(Collider other)
     {
-        if (interactToTeleport && other.CompareTag("Player"))
+        if (!interactToTeleport && other.CompareTag("Player"))
         {
             TeleportPlayer();
         }
@@ -22,8 +22,7 @@ public class RoomTeleport : MonoBehaviour
     public void TeleportPlayer()
     {
         GameManager.instance.playerRef.transform.position = receiver.position;
-        GameManager.instance.currentCam.Priority = 0;
-        receiverCam.Priority = 50;
-        GameManager.instance.currentCam = receiverCam;
+        GameManager.instance.ChangeRoom(roomName);
     }
+
 }

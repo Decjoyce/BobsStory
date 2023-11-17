@@ -8,6 +8,7 @@ public class Interact : MonoBehaviour
     public UnityEvent OnEnterInteraction, OnExitInteraction, OnInteract;
     [SerializeField] KeyCode interactionKey = KeyCode.F;
     [SerializeField] KeyCode altInteractionKey = KeyCode.Space;
+    [SerializeField] Transform camLookAt;
 
     public bool canInteract;
 
@@ -24,6 +25,7 @@ public class Interact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnEnterInteraction.Invoke();
+            FocusCam();
             canInteract = true;
         }
     }
@@ -33,7 +35,19 @@ public class Interact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnExitInteraction.Invoke();
-            canInteract = true;
+            Debug.Log("Ajj");
+            UnFocusCam();
+            canInteract = false;
         }
+    }
+
+    void FocusCam()
+    {
+        GameManager.instance.EditCurrentCam(camLookAt, 45);        
+    }
+
+    void UnFocusCam()
+    {
+        GameManager.instance.ReturnCamToNormal();
     }
 }
