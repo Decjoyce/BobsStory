@@ -24,12 +24,25 @@ public class GameManager : MonoBehaviour
 
     //Room
     public string currentRoom;
+    public float roomSize;
+    public Transform roomStart;
 
     //Camera
     public CinemachineVirtualCamera currentCam;
     [SerializeField] Transform camPositionClass, camPositionCanteen, camPositionHall;
-    [SerializeField] Transform playerLookAt;
+    [SerializeField] Transform playerLookAt, targetLookAt;
+    [SerializeField] CinemachineRecomposer recomposer;
     private float fov;
+
+    private void Start()
+    {
+        targetLookAt.position = playerLookAt.position;
+    }
+
+    private void Update()
+    {
+        SetCamZoom();
+    }
 
     public void ChangeRoom(string nameOfRoom)
     {
@@ -54,16 +67,24 @@ public class GameManager : MonoBehaviour
     }
 
     #region Camera Stuff
+    void SetCamZoom()
+    {
+        float dist = Vector3.Distance(Vector3.zero, playerRef.transform.position);
+        float mappedDistance = Mathf.Clamp(ExtensionMethods.Map(dist, 0, roomSize, 1, 0), 0.3f, 1);
+        
+        recomposer.m_ZoomScale = mappedDistance;
+    }
+
     public void EditCurrentCam(Transform newlookAt = null, float newFov = 0)
     {
         fov = currentCam.m_Lens.FieldOfView;
-        currentCam.LookAt = newlookAt;
+        targetLookAt.position = newlookAt.position;
         currentCam.m_Lens.FieldOfView = newFov;
     }
 
     public void ReturnCamToNormal()
     {
-        currentCam.LookAt = playerLookAt;
+        targetLookAt.position = playerLookAt.position;
         currentCam.m_Lens.FieldOfView = fov;
     }
     #endregion
