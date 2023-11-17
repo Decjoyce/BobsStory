@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
     {
         float dist = Vector3.Distance(Vector3.zero, playerRef.transform.position);
         float mappedDistance = Mathf.Clamp(ExtensionMethods.Map(dist, 0, roomSize, 1, 0), 0.3f, 1);
-        
-        recomposer.m_ZoomScale = mappedDistance;
+
+        recomposer.m_ZoomScale = Mathf.Lerp(recomposer.m_ZoomScale, mappedDistance, 3f * Time.deltaTime); ;
     }
 
     public void EditCurrentCam(Transform newlookAt = null, float newFov = 0)
