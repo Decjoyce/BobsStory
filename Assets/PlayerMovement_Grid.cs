@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement_Grid : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] int speed;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.position = new Vector3(transform.position.x, );
+                        
+        }
+
     }
 }
