@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     //References
     public GameObject playerRef;
+    public GameObject playerGraphicsRef;
 
     //Functionality
     public bool gamePaused = false;

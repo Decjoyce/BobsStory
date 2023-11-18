@@ -16,6 +16,7 @@ public class CameraManager : MonoBehaviour
             return;
         }
         instance = this;
+        recomposer = currentCam.GetComponent<CinemachineRecomposer>();
     }
     #endregion
 
@@ -31,11 +32,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField] CinemachineTargetGroup targetGroup;
     private CinemachineRecomposer recomposer;
     private Transform targetLookAt;
-
-    private void Start()
-    {
-        recomposer = currentCam.GetComponent<CinemachineRecomposer>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -56,6 +52,7 @@ public class CameraManager : MonoBehaviour
         roomSize = newRoomSize;
         roomStart = newRoomStart;
         currentCam.transform.position = camRoomPositions[camIndex].position;
+        recomposer.m_ZoomScale = 1;
     }
 
     public void FocusCameraOnObject(Transform newlookAt)

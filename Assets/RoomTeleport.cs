@@ -22,7 +22,7 @@ public class RoomTeleport : MonoBehaviour
     public void TeleportPlayer()
     {
         GameManager.instance.playerRef.transform.position = receiver.position;
-        GameManager.instance.playerRef.transform.rotation = receiver.rotation;
+        GameManager.instance.playerGraphicsRef.transform.rotation = receiver.rotation;
         GameManager.instance.ChangeRoom(roomName);
     }
 
