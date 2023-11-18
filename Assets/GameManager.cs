@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogWarning("MORE THAN ONE INSTANCE OF " + this.name + " FOUND");
             return;
@@ -22,43 +22,56 @@ public class GameManager : MonoBehaviour
     //References
     public GameObject playerRef;
 
+    //Functionality
+    public bool gamePaused = false;
+    public static int day;
+    public bool afternoon;
+
     //Room
     public string currentRoom;
-    public float roomSize;
-    public Transform roomStart;
+    [SerializeField] GameObject roomHall, roomClass, roomCanteen;
+    [SerializeField] CameraManager camManager;
 
-    //Camera
-    public CinemachineVirtualCamera currentCam;
-    [SerializeField] Transform camPositionClass, camPositionCanteen, camPositionHall;
-    [SerializeField] Transform playerLookAt, targetLookAt;
-    [SerializeField] CinemachineRecomposer recomposer;
-    private float fov;
+
+    //Effects
+    [SerializeField] Animator fadeAnim;
 
     private void Start()
     {
-        targetLookAt.position = playerLookAt.position;
+        ChangeRoom("Hallway");
     }
 
-    private void Update()
+    public void SkipToAfternoon()
     {
-        SetCamZoom();
+        StartCoroutine(TransitionToAfternoon());
+    }
+
+    IEnumerator TransitionToAfternoon()
+    {
+        fadeAnim.SetBool("fade", true);
+        yield return new WaitForSeconds(3f);
+        fadeAnim.SetBool("fade", false);
+        afternoon = true;
     }
 
     public void ChangeRoom(string nameOfRoom)
     {
         switch (nameOfRoom)
         {
+            case "Hallway":
+                currentRoom = nameOfRoom;
+                camManager.ChangeCamera(roomHall.transform.position, 20, 0);
+                SetActiveRoom("Hallway");
+                break;
             case "Class":
                 currentRoom = nameOfRoom;
-                currentCam.transform.position = camPositionClass.position;
+                camManager.ChangeCamera(roomClass.transform.position, 35, 1);
+                SetActiveRoom("Class");
                 break;
             case "Canteen":
                 currentRoom = nameOfRoom;
-                currentCam.transform.position = camPositionCanteen.position;
-                break;
-            case "Hallway":
-                currentRoom = nameOfRoom;
-                currentCam.transform.position = camPositionHall.position;
+                camManager.ChangeCamera(roomCanteen.transform.position, 50, 2);
+                SetActiveRoom("Canteen");
                 break;
             default:
                 Debug.LogError("Invalid Room");
@@ -66,26 +79,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    #region Camera Stuff
-    void SetCamZoom()
+    void SetActiveRoom(string activeroom)
     {
-        float dist = Vector3.Distance(Vector3.zero, playerRef.transform.position);
-        float mappedDistance = Mathf.Clamp(ExtensionMethods.Map(dist, 0, roomSize, 1, 0), 0.3f, 1);
-
-        recomposer.m_ZoomScale = Mathf.Lerp(recomposer.m_ZoomScale, mappedDistance, 3f * Time.deltaTime); ;
+        switch (activeroom)
+        {
+            case "Hallway":
+                roomHall.SetActive(true);
+                roomClass.SetActive(false);
+                roomCanteen.SetActive(false);
+                break;
+            case "Class":
+                roomClass.SetActive(true);
+                roomHall.SetActive(false);
+                roomCanteen.SetActive(false);
+                break;
+            case "Canteen":
+                roomCanteen.SetActive(true);
+                roomClass.SetActive(false);
+                roomHall.SetActive(false);
+                break;
+            default:
+                Debug.LogError("Invalid Room");
+                break;
+        }
     }
-
-    public void EditCurrentCam(Transform newlookAt = null, float newFov = 0)
-    {
-        fov = currentCam.m_Lens.FieldOfView;
-        targetLookAt.position = newlookAt.position;
-        currentCam.m_Lens.FieldOfView = newFov;
-    }
-
-    public void ReturnCamToNormal()
-    {
-        targetLookAt.position = playerLookAt.position;
-        currentCam.m_Lens.FieldOfView = fov;
-    }
-    #endregion
 }

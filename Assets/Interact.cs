@@ -9,7 +9,6 @@ public class Interact : MonoBehaviour
     [SerializeField] KeyCode interactionKey = KeyCode.F;
     [SerializeField] KeyCode altInteractionKey = KeyCode.Space;
     [SerializeField] Transform camLookAt;
-    [SerializeField] float focusFov;
 
     public bool canInteract;
 
@@ -26,7 +25,7 @@ public class Interact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnEnterInteraction.Invoke();
-            //FocusCam();
+            FocusCam();
             canInteract = true;
         }
     }
@@ -36,18 +35,18 @@ public class Interact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnExitInteraction.Invoke();
-            //UnFocusCam();
+            UnFocusCam();
             canInteract = false;
         }
     }
 
     void FocusCam()
     {
-        GameManager.instance.EditCurrentCam(camLookAt,focusFov);        
+        CameraManager.instance.FocusCameraOnObject(camLookAt);        
     }
 
     void UnFocusCam()
     {
-        GameManager.instance.ReturnCamToNormal();
+        CameraManager.instance.UnFocusCamera();
     }
 }

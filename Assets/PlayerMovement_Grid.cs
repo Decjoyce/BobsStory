@@ -23,10 +23,12 @@ public class PlayerMovement_Grid : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+            transform.Translate(Vector3.right * speed);
             graphics.transform.rotation = Quaternion.Euler(0, 90, 0);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
+            transform.Translate(-Vector3.right * speed);
             graphics.transform.rotation = Quaternion.Euler(0, -90, 0);
         }
     }

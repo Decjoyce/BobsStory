@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Classmates : MonoBehaviour
 {
-    [SerializeField] Transform lookAt;
+    private Interact interact;
+    [SerializeField] GameObject talkMenu;
+
+    private void Start()
+    {
+        interact = GetComponent<Interact>();
+    }
 
     public void EnterInteraction()
     {
-        GameManager.instance.currentCam.LookAt = lookAt;
+        //Testing
+        interact.enabled = false;
+        GameManager.instance.gamePaused = true;
+        talkMenu.SetActive(true);
     }
 
     public void ExitInteraction()
     {
-        GameManager.instance.ReturnCamToNormal();
+        //Testing
+        interact.enabled = true;
     }
 }
