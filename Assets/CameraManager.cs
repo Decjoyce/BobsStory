@@ -48,7 +48,7 @@ public class CameraManager : MonoBehaviour
         float dist = Vector3.Distance(roomStart, playerRef.transform.position);
         float mappedDistance = Mathf.Clamp(ExtensionMethods.Map(dist, 0, roomSize, 1, 0), 0.3f, 1);
 
-        recomposer.m_ZoomScale = Mathf.Lerp(recomposer.m_ZoomScale, mappedDistance, 2f * Time.deltaTime); ;
+        recomposer.m_ZoomScale = Mathf.Lerp(recomposer.m_ZoomScale, mappedDistance, 2f * Time.deltaTime);
     }
 
     public void ChangeCamera(Vector3 newRoomStart, float newRoomSize, int camIndex)
