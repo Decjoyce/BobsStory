@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 126198091}
   - component: {fileID: 126198094}
   - component: {fileID: 126198093}
+  - component: {fileID: 126198095}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Player
@@ -548,7 +549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126198090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d17a569b9f247de4b8ff0382bbea4aac, type: 3}
   m_Name: 
@@ -582,6 +583,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &126198095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126198090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff06f2b7ee57e94459b0d064b4512160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  graphics: {fileID: 1592823125}
+  footsteps: {fileID: 157566062}
 --- !u!1 &157566062
 GameObject:
   m_ObjectHideFlags: 0
