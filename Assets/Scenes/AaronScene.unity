@@ -448,7 +448,6 @@ MonoBehaviour:
   interactionKey: 102
   altInteractionKey: 32
   camLookAt: {fileID: 614493771}
-  focusFov: 30
   canInteract: 0
 --- !u!1 &121180089
 GameObject:
@@ -1461,16 +1460,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRef: {fileID: 126198090}
+  gamePaused: 0
+  afternoon: 0
   currentRoom: 
-  roomSize: 20
-  roomStart: {fileID: 0}
-  currentCam: {fileID: 283381201}
-  camPositionClass: {fileID: 1688064280}
-  camPositionCanteen: {fileID: 0}
-  camPositionHall: {fileID: 342680872}
-  playerLookAt: {fileID: 1845157786}
-  targetLookAt: {fileID: 1880222121}
-  recomposer: {fileID: 283381203}
+  roomHall: {fileID: 9566254}
+  roomClass: {fileID: 799925209}
+  roomCanteen: {fileID: 0}
+  camManager: {fileID: 0}
+  fadeAnim: {fileID: 0}
 --- !u!4 &768798260
 Transform:
   m_ObjectHideFlags: 0
@@ -1724,7 +1721,6 @@ MonoBehaviour:
   interactionKey: 102
   altInteractionKey: 32
   camLookAt: {fileID: 1696137222}
-  focusFov: 30
   canInteract: 0
 --- !u!1 &978834252
 GameObject:
@@ -1916,7 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3822b4c669e00934c9658a2524aaad96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 121180090}
+  talkMenu: {fileID: 0}
 --- !u!114 &1098824164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,7 +1997,6 @@ MonoBehaviour:
   interactionKey: 102
   altInteractionKey: 32
   camLookAt: {fileID: 121180090}
-  focusFov: 45
   canInteract: 0
 --- !u!65 &1098824165
 BoxCollider:

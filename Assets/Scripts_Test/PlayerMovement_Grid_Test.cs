@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement_Grid_Test : MonoBehaviour
@@ -10,7 +11,8 @@ public class PlayerMovement_Grid_Test : MonoBehaviour
     
     [Header("SoundEffects")]
     [SerializeField] GameObject footsteps;
-
+    private float FootDelay = 0.3f;
+    
     private void Start()
     {
         //Audio
@@ -23,13 +25,14 @@ public class PlayerMovement_Grid_Test : MonoBehaviour
         {
             //Audio
             footstep();
+           
             
             //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed);
             transform.Translate(Vector3.forward * speed);
             graphics.transform.rotation = Quaternion.Euler(0, 0, 0);
             
             //AudioStop
-            Invoke(nameof(StopFootSteps), 1);
+            Invoke(nameof(StopFootSteps), FootDelay);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -41,7 +44,7 @@ public class PlayerMovement_Grid_Test : MonoBehaviour
             graphics.transform.rotation = Quaternion.Euler(0, 180, 0);
             
             //AudioStop
-            Invoke(nameof(StopFootSteps), 1);
+            Invoke(nameof(StopFootSteps), FootDelay);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -51,7 +54,7 @@ public class PlayerMovement_Grid_Test : MonoBehaviour
             graphics.transform.rotation = Quaternion.Euler(0, 90, 0);
             
             //AudioStop
-            Invoke(nameof(StopFootSteps), 1);
+            Invoke(nameof(StopFootSteps), FootDelay);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -61,7 +64,7 @@ public class PlayerMovement_Grid_Test : MonoBehaviour
             graphics.transform.rotation = Quaternion.Euler(0, -90, 0);
             
             //AudioStop
-            Invoke(nameof(StopFootSteps),1);
+            Invoke(nameof(StopFootSteps), FootDelay);
         }
         
     }
