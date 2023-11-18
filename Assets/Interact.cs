@@ -14,7 +14,7 @@ public class Interact : MonoBehaviour
 
     private void Update()
     {
-        if(canInteract && (Input.GetKeyDown(interactionKey) || Input.GetKeyDown(altInteractionKey)))
+        if(canInteract && (Input.GetKeyDown(interactionKey) || Input.GetKeyDown(altInteractionKey) || Input.GetButtonDown("Submit")))
         {
             OnInteract.Invoke();
         }

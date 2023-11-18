@@ -21,7 +21,8 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if(!GameManager.instance.gamePaused)
+            Movement();
     }
 
     public void Movement()
