@@ -8,7 +8,7 @@ public class Interation : MonoBehaviour
 {
     public UnityEvent enteredInteration, exitedInteration, interacted;
     private bool interactionEnabled;
-    
+    public bool Isinteracting = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,8 +35,12 @@ public class Interation : MonoBehaviour
         {
             exitedInteration.Invoke();
             interacted.Invoke();
+            Isinteracting = true;         
+        }
 
-            
+        else if(interactionEnabled == false)
+        {
+            Isinteracting = false;
         }
     }
 }

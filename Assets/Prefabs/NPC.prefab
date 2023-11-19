@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5376782461829567461}
   - component: {fileID: 6109027970492868881}
   - component: {fileID: 4853616370812393514}
+  - component: {fileID: 1710701508118727169}
+  - component: {fileID: 1869934080153928348}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -98,7 +100,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  interaction: {fileID: 0}
   NPC: {fileID: 5438125520605872068}
+--- !u!114 &1710701508118727169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760104903043023875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a647eb2155d70a44587ad99c30402507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredInteration:
+    m_PersistentCalls:
+      m_Calls: []
+  exitedInteration:
+    m_PersistentCalls:
+      m_Calls: []
+  interacted:
+    m_PersistentCalls:
+      m_Calls: []
+  interactionEnabled: 0
+--- !u!135 &1869934080153928348
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760104903043023875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4855441978202994717
 GameObject:
   m_ObjectHideFlags: 0
