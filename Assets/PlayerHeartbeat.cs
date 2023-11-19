@@ -7,7 +7,7 @@ public class PlayerHeartbeat : MonoBehaviour
     public float baseFrequency;
     public float minFrequency;
     float frequency;
-    public bool enableHeatBeat;
+    public bool enableHeartBeat;
     float delay;
     float radius;
     AudioSource source;
@@ -30,7 +30,7 @@ public class PlayerHeartbeat : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enableHeatBeat)
+        if (enableHeartBeat)
         {
             if (delay <= 0)
             {
@@ -45,6 +45,12 @@ public class PlayerHeartbeat : MonoBehaviour
             else
                 frequency = baseFrequency;
         }
+
+        if (currentTarget == null)
+            enableHeartBeat = false;
+        else
+            enableHeartBeat = true;
+
     }
 
     private void OnTriggerEnter(Collider other)
