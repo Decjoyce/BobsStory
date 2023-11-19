@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Canteen":
                 currentRoom = nameOfRoom;
-                camManager.ChangeCamera(roomCanteen.transform.position, 50, 2);
+                camManager.ChangeCamera(roomCanteen.transform.position, 25, 2);
                 SetActiveRoom("Canteen");
                 break;
             default:

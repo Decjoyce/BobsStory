@@ -6,6 +6,7 @@ public class PlayerHeartbeat : MonoBehaviour
 {
     public float baseFrequency;
     public float minFrequency;
+    public float minVolume;
     float frequency;
     public bool enableHeartBeat;
     float delay;
@@ -72,9 +73,11 @@ public class PlayerHeartbeat : MonoBehaviour
     void SetBeatFrequency()
     {
         float dist = Vector3.Distance(transform.position, currentTarget.position);
-        float mappedDistance = ExtensionMethods.Map(dist, 1, radius, minFrequency, baseFrequency);
+        float mappedDistanceForFrequency = ExtensionMethods.Map(dist, 1, radius, minFrequency, baseFrequency);
+        float mappedDistanceForVolume = ExtensionMethods.Map(dist, 1, radius, 1, minVolume);
 
-        frequency = mappedDistance;
+        source.volume = mappedDistanceForVolume;
+        frequency = mappedDistanceForFrequency;
     }
 
 }
