@@ -34,10 +34,15 @@ public class Interact : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            ExitInteraction();
+        }
+    }
+
+    public void ExitInteraction()
+    {
             OnExitInteraction.Invoke();
             UnFocusCam();
             canInteract = false;
-        }
     }
 
     void FocusCam()
@@ -45,7 +50,7 @@ public class Interact : MonoBehaviour
         CameraManager.instance.FocusCameraOnObject(camLookAt);        
     }
 
-    void UnFocusCam()
+    public void UnFocusCam()
     {
         CameraManager.instance.UnFocusCamera();
     }

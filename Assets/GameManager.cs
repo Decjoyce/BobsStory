@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     //References
     public GameObject playerRef;
     public GameObject playerGraphicsRef;
+    public EventSystem eventSystemRef;
 
     //Functionality
     public bool gamePaused = false;

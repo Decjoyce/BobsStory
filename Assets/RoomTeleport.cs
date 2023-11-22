@@ -8,21 +8,18 @@ public class RoomTeleport : MonoBehaviour
     [SerializeField] Transform receiver;
     [SerializeField] bool interactToTeleport;
     [SerializeField] string roomName; //Determines which room it will switch to {Class, Hallway, Canteen}
+    Interact interact;
 
-    //Checks if player enters collider, if so calls the function TeleportPlayer
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (!interactToTeleport && other.CompareTag("Player"))
-        {
-            TeleportPlayer();
-        }
+        interact = GetComponent<Interact>();
     }
 
     //Sets the players position to the receiver, changes from the current cam to the receiver cam and sets the current cam to the receiver cam
     public void TeleportPlayer()
     {
-        GameManager.instance.playerRef.transform.position = receiver.position;
-        GameManager.instance.playerGraphicsRef.transform.rotation = receiver.rotation;
+        interact.ExitInteraction();
+        GameManager.instance.playerRef.GetComponent<PlayerMovmenetFreeTest>().MovePlayerToPos(receiver);
         GameManager.instance.ChangeRoom(roomName);
     }
 

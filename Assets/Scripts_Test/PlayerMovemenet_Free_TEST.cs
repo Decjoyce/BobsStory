@@ -47,5 +47,13 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
             isMoving = false;
         }
     }
+
+    public void MovePlayerToPos(Transform newPos)
+    {
+        characterController.enabled = false;
+        transform.position = newPos.position;
+        graphics.transform.rotation = newPos.rotation;
+        characterController.enabled = true;
+    }
 }
 
