@@ -36,4 +36,6 @@ public class Classmates : MonoBehaviour
         talkMenu.SetActive(false);
         interact.OnEnterInteraction.Invoke();
     }
+
+
 }
