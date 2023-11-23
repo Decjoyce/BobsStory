@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 10021729}
   - component: {fileID: 10021728}
   - component: {fileID: 10021727}
-  - component: {fileID: 10021726}
   m_Layer: 0
   m_Name: Capsule (3)
   m_TagString: Scary
@@ -201,33 +200,6 @@ Transform:
   - {fileID: 1427377198}
   m_Father: {fileID: 987080667}
   m_LocalEulerAnglesHint: {x: 0, y: 186.541, z: 0}
---- !u!54 &10021726
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10021724}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &10021727
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1454,7 +1426,6 @@ GameObject:
   - component: {fileID: 147859579}
   - component: {fileID: 147859578}
   - component: {fileID: 147859577}
-  - component: {fileID: 147859576}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Scary
@@ -1478,33 +1449,6 @@ Transform:
   - {fileID: 185523493}
   m_Father: {fileID: 390274059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &147859576
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147859574}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &147859577
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2945,6 +2889,7 @@ GameObject:
   - component: {fileID: 390274059}
   - component: {fileID: 390274058}
   - component: {fileID: 390274057}
+  - component: {fileID: 390274060}
   - component: {fileID: 390274056}
   m_Layer: 0
   m_Name: ClassmatesClass
@@ -3030,13 +2975,13 @@ MonoBehaviour:
           m_StringArgument: Speak to Classnates?
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerHeartbeat, Assembly-CSharp
-        m_MethodName: SetTarget
-        m_Mode: 2
+      - m_Target: {fileID: 390274060}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 390274059}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Speak to Classnates?
@@ -3060,6 +3005,18 @@ MonoBehaviour:
       - m_Target: {fileID: 75279974}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 390274060}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3096,7 +3053,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9566254}
+      - m_Target: {fileID: 799925209}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3129,8 +3086,25 @@ Transform:
   - {fileID: 669393139}
   - {fileID: 147859575}
   - {fileID: 305004846}
+  - {fileID: 1817556586}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390274060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390274055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982cfe48c238cf9418ecbeac50ea34a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCs:
+  - {fileID: 669393139}
+  - {fileID: 147859575}
+  turnSmoothTime: 0.1
 --- !u!1 &400821608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,7 +3117,6 @@ GameObject:
   - component: {fileID: 400821613}
   - component: {fileID: 400821612}
   - component: {fileID: 400821611}
-  - component: {fileID: 400821610}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Scary
@@ -3167,33 +3140,6 @@ Transform:
   - {fileID: 1805698954}
   m_Father: {fileID: 987080667}
   m_LocalEulerAnglesHint: {x: 0, y: 166.398, z: 0}
---- !u!54 &400821610
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400821608}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &400821611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4534,7 +4480,6 @@ GameObject:
   - component: {fileID: 642646091}
   - component: {fileID: 642646090}
   - component: {fileID: 642646089}
-  - component: {fileID: 642646092}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Scary
@@ -4631,33 +4576,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642646087}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &642646092
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642646087}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &645284487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,7 +4798,6 @@ GameObject:
   - component: {fileID: 669393143}
   - component: {fileID: 669393142}
   - component: {fileID: 669393141}
-  - component: {fileID: 669393140}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Scary
@@ -4904,33 +4821,6 @@ Transform:
   - {fileID: 2102225237}
   m_Father: {fileID: 390274059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &669393140
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669393138}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &669393141
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6967,7 +6857,6 @@ GameObject:
   - component: {fileID: 900509591}
   - component: {fileID: 900509590}
   - component: {fileID: 900509589}
-  - component: {fileID: 900509588}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Scary
@@ -6991,33 +6880,6 @@ Transform:
   - {fileID: 265923303}
   m_Father: {fileID: 1498587916}
   m_LocalEulerAnglesHint: {x: 0, y: 189.309, z: 0}
---- !u!54 &900509588
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900509586}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &900509589
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7453,6 +7315,7 @@ GameObject:
   - component: {fileID: 987080667}
   - component: {fileID: 987080666}
   - component: {fileID: 987080665}
+  - component: {fileID: 987080668}
   - component: {fileID: 987080664}
   m_Layer: 0
   m_Name: ClassmatesCanteen
@@ -7538,13 +7401,13 @@ MonoBehaviour:
           m_StringArgument: Speak to Classnates?
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerHeartbeat, Assembly-CSharp
-        m_MethodName: SetTarget
-        m_Mode: 2
+      - m_Target: {fileID: 987080668}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 987080667}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Speak to Classnates?
@@ -7568,6 +7431,18 @@ MonoBehaviour:
       - m_Target: {fileID: 75279974}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 987080668}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7604,7 +7479,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9566254}
+      - m_Target: {fileID: 846896167}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -7641,6 +7516,24 @@ Transform:
   - {fileID: 556391336}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &987080668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987080663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982cfe48c238cf9418ecbeac50ea34a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCs:
+  - {fileID: 1668958101}
+  - {fileID: 1862532108}
+  - {fileID: 10021725}
+  - {fileID: 400821609}
+  turnSmoothTime: 0.1
 --- !u!1 &995439939
 GameObject:
   m_ObjectHideFlags: 0
@@ -10077,7 +9970,6 @@ GameObject:
   - component: {fileID: 1401891766}
   - component: {fileID: 1401891765}
   - component: {fileID: 1401891764}
-  - component: {fileID: 1401891763}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Scary
@@ -10101,33 +9993,6 @@ Transform:
   - {fileID: 1259705640}
   m_Father: {fileID: 1498587916}
   m_LocalEulerAnglesHint: {x: 0, y: -12.759, z: 0}
---- !u!54 &1401891763
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401891761}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &1401891764
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10706,6 +10571,7 @@ GameObject:
   - component: {fileID: 1498587916}
   - component: {fileID: 1498587915}
   - component: {fileID: 1498587913}
+  - component: {fileID: 1498587918}
   - component: {fileID: 1498587917}
   m_Layer: 0
   m_Name: ClassmatesHallway
@@ -10768,13 +10634,13 @@ MonoBehaviour:
           m_StringArgument: Speak to Classnates?
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerHeartbeat, Assembly-CSharp
-        m_MethodName: SetTarget
-        m_Mode: 2
+      - m_Target: {fileID: 1498587918}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 1498587916}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Speak to Classnates?
@@ -10798,6 +10664,18 @@ MonoBehaviour:
       - m_Target: {fileID: 75279974}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1498587918}
+        m_TargetAssemblyTypeName: FacingAway, Assembly-CSharp
+        m_MethodName: SetPlayerNear
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10893,6 +10771,23 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1498587918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498587912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982cfe48c238cf9418ecbeac50ea34a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCs:
+  - {fileID: 642646088}
+  - {fileID: 1401891762}
+  - {fileID: 900509587}
+  turnSmoothTime: 180
 --- !u!1 &1510001843
 GameObject:
   m_ObjectHideFlags: 0
@@ -11648,7 +11543,6 @@ GameObject:
   - component: {fileID: 1668958105}
   - component: {fileID: 1668958104}
   - component: {fileID: 1668958103}
-  - component: {fileID: 1668958102}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Scary
@@ -11672,33 +11566,6 @@ Transform:
   - {fileID: 701841370}
   m_Father: {fileID: 987080667}
   m_LocalEulerAnglesHint: {x: 0, y: 16.993, z: 0}
---- !u!54 &1668958102
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668958100}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &1668958103
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11836,7 +11703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671543079}
   serializedVersion: 2
-  m_LocalRotation: {x: 5.132978e-11, y: 0.9992035, z: -0.039904397, w: 0.0000000012852942}
+  m_LocalRotation: {x: -1.895946e-10, y: 0.9992035, z: -0.039904393, w: -0.000000004747437}
   m_LocalPosition: {x: 10, y: 1.25, z: -16.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12761,6 +12628,37 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1817556585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817556586}
+  m_Layer: 0
+  m_Name: Classmates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817556586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817556585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 390274059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820429615
 GameObject:
   m_ObjectHideFlags: 0
@@ -12909,7 +12807,6 @@ GameObject:
   - component: {fileID: 1862532112}
   - component: {fileID: 1862532111}
   - component: {fileID: 1862532110}
-  - component: {fileID: 1862532109}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Scary
@@ -12933,33 +12830,6 @@ Transform:
   - {fileID: 655426887}
   m_Father: {fileID: 987080667}
   m_LocalEulerAnglesHint: {x: 0, y: -30.439, z: 0}
---- !u!54 &1862532109
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862532107}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!136 &1862532110
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13689,7 +13559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969245209}
   serializedVersion: 2
-  m_LocalRotation: {x: 2.2043244e-10, y: 0.99991786, z: 0.012817343, w: -0.00000001719657}
+  m_LocalRotation: {x: -2.2075575e-10, y: 0.99991786, z: 0.012817362, w: 0.000000017221767}
   m_LocalPosition: {x: 20, y: 0.5, z: -14.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
