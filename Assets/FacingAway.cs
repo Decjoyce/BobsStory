@@ -34,7 +34,15 @@ public class FacingAway : MonoBehaviour
                 Vector3 rot = Quaternion.LookRotation(direction).eulerAngles;
                 npc.rotation = Quaternion.Euler(0, rot.y, 0);
             }
+        }
+    }
 
+    public void FacePlayer()
+    {
+        foreach (Transform npc in NPCs)
+        {
+            Vector3 rot = Quaternion.LookRotation(player.transform.position).eulerAngles;
+            npc.rotation = Quaternion.Euler(0, rot.y, 0);
         }
     }
 

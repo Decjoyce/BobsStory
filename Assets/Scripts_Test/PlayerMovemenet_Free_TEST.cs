@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerMovmenetFreeTest : MonoBehaviour
@@ -13,6 +12,7 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     public bool isMoving;
+
     void Start()
     {
         isMoving = false;
@@ -23,6 +23,7 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     {
         if(!GameManager.instance.gamePaused)
             Movement();
+        Application.Q
     }
 
     public void Movement()
