@@ -23,7 +23,6 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     {
         if(!GameManager.instance.gamePaused)
             Movement();
-        Application.Q
     }
 
     public void Movement()
