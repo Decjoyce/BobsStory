@@ -8,7 +8,7 @@ public class ClassmateType : ScriptableObject
     public string classmateType;
     public GameObject[] models;
     public int standing;
-    public Dialogue[] dialogues;
+    public TextAsset inkJSONFile;
 
     public virtual void ChangeModels(Transform[] modelPositions)
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Classmates : MonoBehaviour
 {
     private Interact interact;
+    [SerializeField] private DialogueManager dm;
     [SerializeField] GameObject talkMenu;
     [SerializeField] CinemachineVirtualCamera talkCam;
     [SerializeField] Transform returnPosition;
@@ -23,9 +24,10 @@ public class Classmates : MonoBehaviour
         interact.OnExitInteraction.Invoke();
         interact.enabled = false;
         GameManager.instance.gamePaused = true;
-        talkMenu.SetActive(true);
+        //talkMenu.SetActive(true);
         talkCam.Priority = 10;
         CameraManager.instance.currentCam.Priority = 0;
+        dm.EnterDialogueMode(this);
     }
 
     public void ExitInteraction()
@@ -35,7 +37,7 @@ public class Classmates : MonoBehaviour
         GameManager.instance.gamePaused = false;
         CameraManager.instance.currentCam.Priority = 10;
         talkCam.Priority = 0;
-        talkMenu.SetActive(false);
+        //talkMenu.SetActive(false);
         interact.OnEnterInteraction.Invoke();
     }
 

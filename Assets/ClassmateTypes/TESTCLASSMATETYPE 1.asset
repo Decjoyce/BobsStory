@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 7595509931237387284, guid: a94a3109fb5c20e4dbb418332d70da19, type: 3}
   - {fileID: 7595509931237387284, guid: a94a3109fb5c20e4dbb418332d70da19, type: 3}
   standing: 0
+  inkJSONFile: {fileID: 4900000, guid: 4c5e3630e0337244ca32569c3350e290, type: 3}
