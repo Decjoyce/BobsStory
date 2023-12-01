@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ClassmateManager : MonoBehaviour
 {
     [SerializeField] Classmates[] classmates;
-    [SerializeField] List<Classmates> classmateTypes;
+    [SerializeField] ClassmateType[] classmatesTypes;
+    private List<ClassmateType> availableClassmateTypes = new List<ClassmateType>();
 
-    private void Start()
+    private void Awake()
     {
-/*        foreach(Classmates mateGroup in classmates)
+        availableClassmateTypes = classmatesTypes.ToList();
+        foreach(Classmates mates in classmates)
         {
-            Debug.Log
-        }*/
-        
+            int ranType = Random.Range(0, availableClassmateTypes.Count() - 1);
+            mates.ChangeType(availableClassmateTypes[ranType]);
+            availableClassmateTypes.Remove(availableClassmateTypes[ranType]);
+        }
     }
 
 }

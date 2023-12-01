@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Classmate Type", menuName = "Classmates")]
 public class ClassmateType : ScriptableObject
 {
     public string classmateType;
-    public Mesh graphics;
+    public GameObject[] models;
     public int standing;
     public Dialogue[] dialogues;
+
+    public virtual void ChangeModels(Transform[] modelPositions)
+    {
+        foreach(Transform pos in modelPositions)
+        {
+            Instantiate(models[Random.Range(0, models.Length)], pos);
+        }
+    }
 
 }
