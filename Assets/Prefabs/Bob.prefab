@@ -151,7 +151,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10
   m_Height: 1
@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 1895757631067699796}
   - component: {fileID: 3414011358421142099}
   - component: {fileID: 7446302110167291637}
+  - component: {fileID: 6577621632499827424}
   - component: {fileID: 111688265500105810}
   m_Layer: 0
   m_Name: Bob
@@ -375,6 +376,18 @@ MonoBehaviour:
   speed: 3
   turnSmoothTime: 0.1
   isMoving: 0
+--- !u!114 &6577621632499827424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473601962522331731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810059ceea1af784e8e665f2d3d2d120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &111688265500105810
 CharacterController:
   m_ObjectHideFlags: 0

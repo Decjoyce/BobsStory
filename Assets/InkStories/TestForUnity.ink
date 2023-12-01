@@ -11,5 +11,5 @@ What do you want? #speaker:Jerry
         -> chosen("French")
 
 === chosen(greeting) ===
-You chose {greeting}!
+You chose {greeting}! #standing:5
     -> END
