@@ -9,6 +9,8 @@ public class Classmates : MonoBehaviour
     [SerializeField] GameObject talkMenu;
     [SerializeField] CinemachineVirtualCamera talkCam;
     [SerializeField] Transform returnPosition;
+    [SerializeField] Transform[] modelPositions;
+    public ClassmateType classmateType;
 
     private void Start()
     {
@@ -35,6 +37,12 @@ public class Classmates : MonoBehaviour
         talkCam.Priority = 0;
         talkMenu.SetActive(false);
         interact.OnEnterInteraction.Invoke();
+    }
+
+    public void ChangeType(ClassmateType type)
+    {
+        classmateType = type;
+        classmateType.ChangeModels(modelPositions);
     }
 
 
