@@ -4,12 +4,17 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 using System;
+using UnityEditor.ShaderGraph.Internal;
+using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private Slider timerBar;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -28,6 +33,16 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string TIME_TAG = "time";
     private const string STANDING_TAG = "standing";
+    private const string END_TAG = "end";
+
+    bool atEnd;
+
+    public bool timerOn;
+    float startTime;
+    public float timeLeft;
+
+    [SerializeField] Volume talkVolume, mainVolume;
+    private Vignette vignette;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +57,7 @@ public class DialogueManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
+        talkVolume.profile.TryGet(out vignette);
     }
 
     private void Update()
@@ -51,10 +67,27 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (currentStory.currentChoices.Count == 0)
+        if (currentStory.currentChoices.Count == 0 && !atEnd)
         {
-            ContinueStory();
+                ContinueStory();
         }
+        if (atEnd && Input.GetButtonDown("Submit"))
+            ContinueStory();
+
+        if (timerOn)
+        {
+            timeLeft -= Time.deltaTime;
+            timerBar.gameObject.SetActive(true);
+            timerBar.value = timeLeft;
+            vignette.intensity.value = ExtensionMethods.Map(timeLeft, 0, timerBar.maxValue, 1, 0);
+        }
+        else
+        {
+            timerBar.value = timerBar.maxValue;
+        }
+
+        if (timerOn && timeLeft <= 0)
+            ContinueStory();
     }
 
     public void EnterDialogueMode(Classmates mate)
@@ -63,6 +96,9 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(classmate.classmateType.inkJSONFile.text);
         dialoguePlaying = true;
         dialoguePanel.SetActive(true);
+
+        talkVolume.gameObject.SetActive(true);
+        mainVolume.gameObject.SetActive(false);
 
         if (currentStory.canContinue)
         {
@@ -80,15 +116,24 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePlaying = false;
         dialoguePanel.SetActive(false);
+        dialogueText.text = "";
+
         classmate.ExitInteraction();
         classmate = null;
-        dialogueText.text = "";
+
+        timerOn = false;
+        atEnd = false;
+
+        vignette.intensity.value = 0;
+        talkVolume.gameObject.SetActive(false);
+        mainVolume.gameObject.SetActive(true);
     }
 
     void ContinueStory()
     {
         if (currentStory.canContinue)
         {
+            timerOn = false;
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
             HandleTags(currentStory.currentTags);
@@ -150,10 +195,15 @@ public class DialogueManager : MonoBehaviour
                 case PORTRAIT_TAG:
                     break;
                 case TIME_TAG:
-
+                    timeLeft = float.Parse(tagValue);
+                    timerBar.maxValue = timeLeft;
+                    timerOn = true;
                     break;
                 case STANDING_TAG:
                     classmate.classmateType.standing += int.Parse(tagValue);
+                    break;
+                case END_TAG:
+                    atEnd = true;
                     break;
                 default:
                     Debug.LogWarning("Checked Tag is not being Handled: " + tag);
