@@ -11,7 +11,7 @@ What do you want? #speaker:Jerry #time:5
         -> chosen("French")
 
 === chosen(greeting) ===
-You chose {greeting}! #standing:5
+What did you just say?!? #standing:5
 ->My_Choices2
 == My_Choices2 ==
     + [Waddup B] 
