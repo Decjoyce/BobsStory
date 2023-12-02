@@ -51,9 +51,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (currentStory.currentChoices.Count == 0 /*&& Input.GetKeyDown(KeyCode.Space)*/)
+        if (currentStory.currentChoices.Count == 0)
         {
-            Debug.Log("Dont know what the issue is now");
             ContinueStory();
         }
     }
