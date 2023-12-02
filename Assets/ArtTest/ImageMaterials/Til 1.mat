@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PinkBrickLarge_Hallway 1
+  m_Name: Til 1
   m_Shader: {fileID: 4800000, guid: 50baa05cbcf3a114dae45f6ef81f7352, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -48,8 +48,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fce01751d34419b47bcacb6d83821236, type: 3}
-        m_Scale: {x: 20, y: 70}
+        m_Texture: {fileID: 2800000, guid: bed73ec3ebd186243930058990f1019f, type: 3}
+        m_Scale: {x: 78.8, y: 68.1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -121,7 +121,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5551869890132523273
+--- !u!114 &7132771092223873767
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
