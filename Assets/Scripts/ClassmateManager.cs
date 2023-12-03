@@ -11,8 +11,13 @@ public class ClassmateManager : MonoBehaviour
 
     private void Awake()
     {
+        SetUpClassmates();
+    }
+
+    public void SetUpClassmates()
+    {
         availableClassmateTypes = classmatesTypes.ToList();
-        foreach(Classmates mates in classmates)
+        foreach (Classmates mates in classmates)
         {
             int ranType = Random.Range(0, availableClassmateTypes.Count() - 1);
             mates.ChangeType(availableClassmateTypes[ranType]);

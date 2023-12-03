@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+        cm = GetComponent<ClassmateManager>();
     }
     #endregion
 
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerRef;
     public GameObject playerGraphicsRef;
     public EventSystem eventSystemRef;
+
+    private ClassmateManager cm;
 
     //Functionality
     public bool gamePaused = false;
@@ -35,9 +39,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject roomHall, roomClass, roomCanteen;
     [SerializeField] CameraManager camManager;
 
-
     //Effects
     [SerializeField] Animator fadeAnim;
+
+    //Events
+    public UnityEvent OnAfternoon;
 
     private void Start()
     {
@@ -52,9 +58,18 @@ public class GameManager : MonoBehaviour
     IEnumerator TransitionToAfternoon()
     {
         fadeAnim.SetBool("fade", true);
+        gamePaused = true;
         yield return new WaitForSeconds(3f);
+        gamePaused = false;
         fadeAnim.SetBool("fade", false);
+        cm.SetUpClassmates();
         afternoon = true;
+        OnAfternoon.Invoke();
+    }
+
+    public void GoHome()
+    {
+
     }
 
     public void ChangeRoom(string nameOfRoom)

@@ -29,16 +29,16 @@ public class DialogueManager : MonoBehaviour
     [Header("Tag Handling")]
     [SerializeField] private TextMeshProUGUI displayNameText;
 
+    //ink Tag
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
-    private const string TIME_TAG = "time";
     private const string STANDING_TAG = "standing";
     private const string CONFIDENCE_TAG = "confidence";
     private const string DECAY_TAG = "decay";
     private const string END_TAG = "end";
 
 
-    //Confidence Metre
+    //Confidence Meter
     float maxConfidence = 100;
     float decayRateConfidence = 1f;
     float currentConfidence;
@@ -78,7 +78,6 @@ public class DialogueManager : MonoBehaviour
         }
         if (atEnd && Input.GetButtonDown("Submit"))
         {
-            Debug.Log("dwdw");
             ContinueStory();
         }
 
@@ -101,6 +100,7 @@ public class DialogueManager : MonoBehaviour
         mainVolume.gameObject.SetActive(false);
 
         currentConfidence = maxConfidence * classmate.classmateType.standing / 10;
+        decayRateConfidence = 1;
         timerBar.maxValue = currentConfidence;
 
         atEnd = false;
@@ -191,7 +191,6 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case SPEAKER_TAG:
-                    Debug.Log("Yep");
                     displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
