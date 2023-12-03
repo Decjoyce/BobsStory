@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Window_Guard
+  m_Name: Window_Guard_Class
   m_Shader: {fileID: 4800000, guid: 50baa05cbcf3a114dae45f6ef81f7352, type: 3}
   m_Parent: {fileID: 2100000, guid: 4266d0559f061ec45a6a7ce48346bcbc, type: 2}
   m_ModifiedSerializedProperties: 0
