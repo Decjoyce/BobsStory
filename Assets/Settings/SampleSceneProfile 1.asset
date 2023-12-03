@@ -120,8 +120,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 0.038069528, g: 0, b: 0.0754717, a: 1}
   center:
-    m_OverrideState: 0
-    m_Value: {x: 0.5, y: -0.01}
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.27}
   intensity:
     m_OverrideState: 1
     m_Value: 0
@@ -130,4 +130,4 @@ MonoBehaviour:
     m_Value: 1
   rounded:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0

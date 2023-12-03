@@ -33,13 +33,17 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string TIME_TAG = "time";
     private const string STANDING_TAG = "standing";
+    private const string CONFIDENCE_TAG = "confidence";
+    private const string DECAY_TAG = "decay";
     private const string END_TAG = "end";
 
-    bool atEnd;
 
-    public bool timerOn;
-    float startTime;
-    public float timeLeft;
+    //Confidence Metre
+    float maxConfidence = 100;
+    float decayRateConfidence = 1f;
+    float currentConfidence;
+
+    bool atEnd;
 
     [SerializeField] Volume talkVolume, mainVolume;
     private Vignette vignette;
@@ -58,6 +62,7 @@ public class DialogueManager : MonoBehaviour
             index++;
         }
         talkVolume.profile.TryGet(out vignette);
+
     }
 
     private void Update()
@@ -69,25 +74,20 @@ public class DialogueManager : MonoBehaviour
 
         if (currentStory.currentChoices.Count == 0 && !atEnd)
         {
-                ContinueStory();
+            ContinueStory();
         }
         if (atEnd && Input.GetButtonDown("Submit"))
+        {
+            Debug.Log("dwdw");
             ContinueStory();
-
-        if (timerOn)
-        {
-            timeLeft -= Time.deltaTime;
-            timerBar.gameObject.SetActive(true);
-            timerBar.value = timeLeft;
-            vignette.intensity.value = ExtensionMethods.Map(timeLeft, 0, timerBar.maxValue, 1, 0);
-        }
-        else
-        {
-            timerBar.value = timerBar.maxValue;
         }
 
-        if (timerOn && timeLeft <= 0)
-            ContinueStory();
+        currentConfidence -= decayRateConfidence * Time.deltaTime;
+        timerBar.value = currentConfidence;
+        vignette.intensity.value = ExtensionMethods.Map(currentConfidence, 0, timerBar.maxValue, 1, 0);
+
+        if (currentConfidence <= 0)
+            ExitDialogueMode();
     }
 
     public void EnterDialogueMode(Classmates mate)
@@ -100,6 +100,10 @@ public class DialogueManager : MonoBehaviour
         talkVolume.gameObject.SetActive(true);
         mainVolume.gameObject.SetActive(false);
 
+        currentConfidence = maxConfidence * classmate.classmateType.standing / 10;
+        timerBar.maxValue = currentConfidence;
+
+        atEnd = false;
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
@@ -121,7 +125,6 @@ public class DialogueManager : MonoBehaviour
         classmate.ExitInteraction();
         classmate = null;
 
-        timerOn = false;
         atEnd = false;
 
         vignette.intensity.value = 0;
@@ -133,7 +136,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            timerOn = false;
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
             HandleTags(currentStory.currentTags);
@@ -194,13 +196,14 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case PORTRAIT_TAG:
                     break;
-                case TIME_TAG:
-                    timeLeft = float.Parse(tagValue);
-                    timerBar.maxValue = timeLeft;
-                    timerOn = true;
-                    break;
                 case STANDING_TAG:
                     classmate.classmateType.standing += int.Parse(tagValue);
+                    break;
+                case CONFIDENCE_TAG:
+                    currentConfidence += int.Parse(tagValue);
+                    break;
+                case DECAY_TAG:
+                    decayRateConfidence += int.Parse(tagValue);
                     break;
                 case END_TAG:
                     atEnd = true;

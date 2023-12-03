@@ -1,4 +1,4 @@
-What do you want? #speaker:Jerry #time:5
+What do you want? #speaker:Jerry
 ->My_Choices
 == My_Choices ==
     + [Hey] 
@@ -11,7 +11,7 @@ What do you want? #speaker:Jerry #time:5
         -> chosen("French")
 
 === chosen(greeting) ===
-What did you just say?!? #standing:5
+What did you just say?!? #confidence:-10 #decay:5
 ->My_Choices2
 == My_Choices2 ==
     + [Waddup B] 
@@ -23,5 +23,5 @@ What did you just say?!? #standing:5
     + [eej] 
         -> chosen2("French")
 === chosen2(dw) ===
-Good idea!
+Good idea! #end:
 ->END
