@@ -1,7 +1,7 @@
-What's up? #speaker:Tom #decay:3
+What's up? #speaker:Tom #decay:1 #button:0.time;1
 ->Choice01
 == Choice01 ==
-    +[Hey]
+    +[Hey] #decay:5
         -> Response01_01
     +[Not much bro]
         -> Response01_02

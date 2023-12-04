@@ -8,6 +8,7 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -35,8 +36,11 @@ public class DialogueManager : MonoBehaviour
     private const string STANDING_TAG = "standing";
     private const string CONFIDENCE_TAG = "confidence";
     private const string DECAY_TAG = "decay";
+    private const string BUTTON_TAG = "button";
     private const string END_TAG = "end";
 
+
+    [SerializeField] EventSystem eventSystem;
 
     //Confidence Meter
     float maxConfidence = 100;
@@ -102,6 +106,8 @@ public class DialogueManager : MonoBehaviour
         currentConfidence = maxConfidence * classmate.classmateType.standing / 10;
         decayRateConfidence = 1;
         timerBar.maxValue = currentConfidence;
+
+        eventSystem.SetSelectedGameObject(choices[0]);
 
         atEnd = false;
         if (currentStory.canContinue)
@@ -202,7 +208,11 @@ public class DialogueManager : MonoBehaviour
                     currentConfidence += int.Parse(tagValue);
                     break;
                 case DECAY_TAG:
-                    decayRateConfidence += int.Parse(tagValue);
+                    decayRateConfidence += float.Parse(tagValue);
+                    break;
+                case BUTTON_TAG:
+                    string[] splitValue = tagValue.Split('.');
+                    ButtonTagHandle(splitValue);
                     break;
                 case END_TAG:
                     atEnd = true;
@@ -214,4 +224,25 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void ButtonTagHandle(string[] buttonParams)
+    {
+        string thechoice = buttonParams[0];
+        string param = buttonParams[1];
+        string[] splitParam = param.Split(';');
+        string paramKey = splitParam[0].Trim();
+        string paramValue = splitParam[1].Trim();
+        switch (paramKey)
+        {
+            case "time":
+                Debug.Log(thechoice + ", " + param);
+                StartCoroutine(DisableChoice(float.Parse(paramValue), choices[int.Parse(thechoice)]));
+                    break;
+        }
+    }
+
+    IEnumerator DisableChoice(float delay, GameObject button)
+    {
+        yield return new WaitForSeconds(delay);
+        button.SetActive(false);
+    }
 }
