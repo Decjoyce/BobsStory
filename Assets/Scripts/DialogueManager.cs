@@ -145,6 +145,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
             HandleTags(currentStory.currentTags);
+            StopAllCoroutines();
         }
         else
         {
