@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DecoScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/AaronTesty.unity
+    guid: 382986c10e6b8dd4b9427fa349e5ac36
+  - enabled: 1
     path: Assets/Scenes/Playtest_Scene_Test.unity
     guid: 440ec1f60c7a26b48ba38ed5670c6bbe
   m_configObjects: {}
