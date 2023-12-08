@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovmenetFreeTest : MonoBehaviour
 {
     public CharacterController characterController;
     public GameObject graphics;
+    public Animator anim;
 
     public float speed = 6f;
 
@@ -30,7 +32,18 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
         isMoving = true;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        float CurrentSpeed = characterController.velocity.magnitude;
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if(CurrentSpeed < speed)
+        {
+            anim.SetFloat("Speed", 0f);
+        }
+
+        else if(CurrentSpeed > speed)
+        {
+            anim.SetFloat("Speed", 1f);
+        }
 
         if (direction.magnitude >= 0.1f)
         {
