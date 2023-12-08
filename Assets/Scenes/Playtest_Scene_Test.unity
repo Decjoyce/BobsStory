@@ -6545,6 +6545,7 @@ Transform:
   - {fileID: 557484095}
   - {fileID: 305004846}
   - {fileID: 549706729}
+  - {fileID: 2027839026}
   m_Father: {fileID: 611651055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390274060
@@ -12513,6 +12514,112 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711254597}
   m_Mesh: {fileID: 6239881831769578202, guid: 46e54010454a864459f9f9911965425d, type: 3}
+--- !u!1 &713986661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713986662}
+  - component: {fileID: 713986663}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Scary
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &713986662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713986661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1498587916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &713986663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713986661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &726358411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726358412}
+  - component: {fileID: 726358413}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Scary
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726358412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726358411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 987080667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &726358413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726358411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &729106709
 GameObject:
   m_ObjectHideFlags: 0
@@ -17326,6 +17433,7 @@ Transform:
   - {fileID: 1777115965}
   - {fileID: 556391336}
   - {fileID: 937497187}
+  - {fileID: 726358412}
   m_Father: {fileID: 611651055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &987080668
@@ -24969,6 +25077,7 @@ Transform:
   - {fileID: 1040274930}
   - {fileID: 1771589754}
   - {fileID: 1217288679}
+  - {fileID: 713986662}
   m_Father: {fileID: 611651055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1498587917
@@ -26422,7 +26531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618565501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20577289, y: -0.00000001683816, z: 0.0000000035406065, w: 0.9785998}
+  m_LocalRotation: {x: 0.2057729, y: 0.00000001683816, z: -0.0000000035406065, w: 0.9785998}
   m_LocalPosition: {x: 0, y: 0.5, z: 56.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34751,6 +34860,59 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4781277628412113339, guid: 46e54010454a864459f9f9911965425d, type: 3}
+--- !u!1 &2027839025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027839026}
+  - component: {fileID: 2027839027}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Scary
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027839026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027839025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 390274059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2027839027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027839025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2031997699
 GameObject:
   m_ObjectHideFlags: 0
@@ -37356,6 +37518,27 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 701261665}
+    - target: {fileID: 4504961393099814261, guid: ac3c1151ea0c15b40b168a0adb1380cd,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504961393099814261, guid: ac3c1151ea0c15b40b168a0adb1380cd,
+        type: 3}
+      propertyPath: Priority
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504961393099814261, guid: ac3c1151ea0c15b40b168a0adb1380cd,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.571
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504961393099814261, guid: ac3c1151ea0c15b40b168a0adb1380cd,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2fbdb9fc336f7c149a7539ac6dfbd26a,
+        type: 2}
     - target: {fileID: 7666475284929159888, guid: ac3c1151ea0c15b40b168a0adb1380cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37492,12 +37675,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000003719987
+      value: -6.3225716e-19
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.9871636e-10
+      value: 4.0667425e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -37507,7 +37690,7 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05334251
+      value: 0.053342506
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -37648,7 +37831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseFrequency: 1.5
   minFrequency: 0.2
-  minVolume: 0.4
+  minVolume: 0.3
   enableHeartBeat: 0
   heatBeat: {fileID: 8300000, guid: c32a41a5c4268304a8854bd96d39c817, type: 3}
 --- !u!1 &5918658850898152905
