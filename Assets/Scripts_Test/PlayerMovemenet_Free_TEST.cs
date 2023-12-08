@@ -32,25 +32,16 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
         isMoving = true;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        float CurrentSpeed = characterController.velocity.magnitude;
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if(CurrentSpeed < speed)
-        {
-            anim.SetFloat("Speed", 0f);
-        }
-
-        else if(CurrentSpeed > speed)
-        {
-            anim.SetFloat("Speed", 1f);
-        }
+      
 
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(graphics.transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             graphics.transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            anim.SetFloat("Speed", 1f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
@@ -58,6 +49,7 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
         else
         {
             isMoving = false;
+            anim.SetFloat("Speed", 0f);
         }
     }
 
