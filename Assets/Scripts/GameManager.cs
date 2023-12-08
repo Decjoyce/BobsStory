@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         {
             case "Hallway":
                 currentRoom = nameOfRoom;
-                camManager.ChangeCamera(roomHall.transform.position, 20, 0);
+                camManager.ChangeCamera(roomHall.transform.position, 45, 0);
                 SetActiveRoom("Hallway");
                 break;
             case "Class":
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "Canteen":
                 currentRoom = nameOfRoom;
-                camManager.ChangeCamera(roomCanteen.transform.position, 25, 2);
+                camManager.ChangeCamera(roomCanteen.transform.position, 55, 2);
                 SetActiveRoom("Canteen");
                 break;
             default:

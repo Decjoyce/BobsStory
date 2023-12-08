@@ -4,7 +4,6 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 using System;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
@@ -107,7 +106,7 @@ public class DialogueManager : MonoBehaviour
         decayRateConfidence = 1;
         timerBar.maxValue = currentConfidence;
 
-        eventSystem.SetSelectedGameObject(choices[0]);
+        //eventSystem.SetSelectedGameObject(choices[0]);
 
         atEnd = false;
         if (currentStory.canContinue)
