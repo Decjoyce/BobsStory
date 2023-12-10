@@ -6,10 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator anim;
+    public float TransistionTime = 1.5f;
     public void LoadLevel()
     {
-        int buildIndex = 1;
+        StartCoroutine(LevelLoadingtime(SceneManager.GetActiveScene().buildIndex + 1));
+    }
 
-        SceneManager.LoadScene(buildIndex);
+    IEnumerator LevelLoadingtime(int loadingTime)
+    {
+        anim.SetTrigger("Play");
+
+        yield return new WaitForSeconds(TransistionTime);
+
+        SceneManager.LoadScene(loadingTime);
     }
 }
