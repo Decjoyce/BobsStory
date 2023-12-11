@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6389,7 +6389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 768798263}
-  talkMenu: {fileID: 0}
   talkCam: {fileID: 1671543080}
   returnPosition: {fileID: 305004846}
   modelPositions:
@@ -12676,7 +12675,7 @@ GameObject:
   - component: {fileID: 726358412}
   - component: {fileID: 726358413}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: HeartbeatTrigger
   m_TagString: Scary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17373,7 +17372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 768798263}
-  talkMenu: {fileID: 0}
   talkCam: {fileID: 1969245210}
   returnPosition: {fileID: 556391336}
   modelPositions:
@@ -19033,7 +19031,7 @@ Transform:
   m_GameObject: {fileID: 1099333460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -9.236597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25090,7 +25088,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 768798263}
-  talkMenu: {fileID: 0}
   talkCam: {fileID: 1938210443}
   returnPosition: {fileID: 1771589754}
   modelPositions:
@@ -26701,7 +26698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618565501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20577289, y: -0.00000001683816, z: 0.0000000035406065, w: 0.9785998}
+  m_LocalRotation: {x: 0.2057729, y: 0.00000001683816, z: -0.0000000035406065, w: 0.9785998}
   m_LocalPosition: {x: 0, y: 0.5, z: 56.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37845,12 +37842,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000003719987
+      value: -6.3225716e-19
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.9871636e-10
+      value: 4.0667425e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -37860,7 +37857,7 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05334251
+      value: 0.053342506
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -38000,9 +37997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseFrequency: 1.5
-  minFrequency: 0.2
+  minFrequency: 0.3
   minVolume: 0.3
-  enableHeartBeat: 0
+  enableHeartBeat: 1
   heatBeat: {fileID: 8300000, guid: 289bba1cdc5656743998b6a461d14ef1, type: 3}
 --- !u!1 &5918658850898152905
 GameObject:

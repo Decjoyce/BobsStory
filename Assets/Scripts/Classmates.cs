@@ -7,7 +7,6 @@ public class Classmates : MonoBehaviour
 {
     private Interact interact;
     [SerializeField] private DialogueManager dm;
-    [SerializeField] GameObject talkMenu;
     [SerializeField] CinemachineVirtualCamera talkCam;
     [SerializeField] Transform returnPosition;
     [SerializeField] Transform[] modelPositions;
@@ -25,6 +24,7 @@ public class Classmates : MonoBehaviour
         GameManager.instance.gamePaused = true;
         talkCam.Priority = 10;
         CameraManager.instance.currentCam.Priority = 0;
+        GameManager.instance.playerRef.GetComponentInChildren<PlayerHeartbeat>().enabled = false;
         dm.EnterDialogueMode(this);
     }
 
@@ -34,6 +34,7 @@ public class Classmates : MonoBehaviour
         GameManager.instance.gamePaused = false;
         CameraManager.instance.currentCam.Priority = 10;
         talkCam.Priority = 0;
+        GameManager.instance.playerRef.GetComponentInChildren<PlayerHeartbeat>().enabled = true;
         interact.OnEnterInteraction.Invoke();
     }
 
