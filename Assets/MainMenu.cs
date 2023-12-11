@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
         anim.SetTrigger("Play");
         
         music.SetActive(false);
-        Invoke(nameof(FightingSound), 2);
+        //Invoke(nameof(FightingSound), 2);
         
         yield return new WaitForSeconds(TransistionTime);
 
