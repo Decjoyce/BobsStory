@@ -1,7 +1,7 @@
-What's up? #speaker:Tom #decay:1 #button:0.time;1
+What's up? #speaker:Tom #decay:10
 ->Choice01
 == Choice01 ==
-    +[Hey] #decay:5
+    +[Hey]
         -> Response01_01
     +[Not much bro]
         -> Response01_02
@@ -12,10 +12,10 @@ What's up? #speaker:Tom #decay:1 #button:0.time;1
 What do you want?
     -> Choice02
 === Response01_02 ===
-Cool
+Cool...
     -> Choice02
 === Response01_03 ===
-Then what do you want?
+Then, what do you want?
     -> Choice02
 
 == Choice02 ==
@@ -32,9 +32,9 @@ Then what do you want?
 #confidence:5
     +[What team do yous support?]
         -> Choice03_04
-    +[Did yous see the United game last night?]
-        -> Choice03_04
-    +[Football is so dumb amirite?]
+    +[Did yous see the games last night?]
+        -> Response02_02
+    +[Football is so dumb, am I right?]
         -> Choice03_04
 
 === Choice02_02 ===
@@ -57,11 +57,23 @@ Then what do you want?
 
 === Choice02_04 ===
     +[Why'd the chicken cross the road?]
-        -> Choice03_04
+        -> Choice02_04a
     +[Knock-Knock]
-        -> Choice03_04
-        
-
+        -> Choice02_04a
+==== Choice02_04a ====
+    +[To Get to the other side]
+        -> Response02_04a
+    +[Nevermind... it's lame]
+        -> Response02_04b
+===== Response02_04a ====
+What?
+-> Choice02_04a
+===== Response02_04b ====
+What?
+-> Choice02_04a
+=== Response02_02 ===
+Yeah, United are so bad, can't believe they haven't sacked that fella yet.
+-> DONE
 === Choice03_04 ===
 Then what do you want?
     -> END
