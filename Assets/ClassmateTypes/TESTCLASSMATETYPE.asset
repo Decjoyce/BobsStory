@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: TESTCLASSMATETYPE
   m_EditorClassIdentifier: 
   classmateType: Jocks
-  models:
-  - {fileID: 7595509931237387284, guid: 1425ce55e1d193f4ca5a735492491a88, type: 3}
-  - {fileID: 7595509931237387284, guid: a94a3109fb5c20e4dbb418332d70da19, type: 3}
+  modelsStanding:
+  - {fileID: 9037781372625212, guid: 7616fe0ed2a703c4f90a041dd59784bd, type: 3}
+  modelsSitting:
+  - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
+  - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}
   standing: 10
   inkJSONFile: {fileID: 4900000, guid: d56816571cbc74d4aa757aebda234cdd, type: 3}

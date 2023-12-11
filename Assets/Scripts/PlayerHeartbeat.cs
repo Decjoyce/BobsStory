@@ -67,14 +67,15 @@ public class PlayerHeartbeat : MonoBehaviour
         if (other.CompareTag("Scary"))
         {
             currentTarget = null;
+            source.PlayOneShot(heatBeat);
         }
     }
 
     void SetBeatFrequency()
     {
         float dist = Vector3.Distance(transform.position, currentTarget.position);
-        float mappedDistanceForFrequency = ExtensionMethods.Map(dist, 1, radius, minFrequency, baseFrequency);
-        float mappedDistanceForVolume = ExtensionMethods.Map(dist, 1, radius, 1, minVolume);
+        float mappedDistanceForFrequency = ExtensionMethods.Map(dist, 2, radius, minFrequency, baseFrequency);
+        float mappedDistanceForVolume = ExtensionMethods.Map(dist, 2, radius, 1, minVolume);
 
         source.volume = mappedDistanceForVolume;
         frequency = mappedDistanceForFrequency;

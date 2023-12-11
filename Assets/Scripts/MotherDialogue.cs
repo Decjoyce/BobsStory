@@ -8,13 +8,13 @@ using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
-public class DialogueManager : MonoBehaviour
+public class MotherDialogue : MonoBehaviour
 {
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private Slider timerBar;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -23,8 +23,6 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
 
     private bool dialoguePlaying;
-
-    public Classmates classmate;
 
     [Header("Tag Handling")]
     [SerializeField] private TextMeshProUGUI displayNameText;
@@ -38,18 +36,12 @@ public class DialogueManager : MonoBehaviour
     private const string BUTTON_TAG = "button";
     private const string END_TAG = "end";
 
+    public TextAsset inkJSONFile;
 
     [SerializeField] EventSystem eventSystem;
-
-    //Confidence Meter
-    float maxConfidence = 100;
-    float decayRateConfidence = 1f;
-    float currentConfidence;
+    [SerializeField] CinemachineVirtualCamera talkCam;
 
     bool atEnd;
-
-    [SerializeField] Volume talkVolume, mainVolume;
-    private Vignette vignette;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +56,8 @@ public class DialogueManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
-        talkVolume.profile.TryGet(out vignette);
+
+        EnterDialogueMode();
 
     }
 
@@ -83,30 +76,14 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
-
-        currentConfidence -= decayRateConfidence * Time.deltaTime;
-        timerBar.value = currentConfidence;
-        vignette.intensity.value = ExtensionMethods.Map(currentConfidence, 0, timerBar.maxValue, 1, 0);
-
-        if (currentConfidence <= 0)
-            ExitDialogueMode();
     }
 
-    public void EnterDialogueMode(Classmates mate)
+    public void EnterDialogueMode()
     {
-        classmate = mate;
-        currentStory = new Story(classmate.classmateType.inkJSONFile.text);
+        GameManager.instance.gamePaused = true;
+        currentStory = new Story(inkJSONFile.text);
         dialoguePlaying = true;
         dialoguePanel.SetActive(true);
-
-        talkVolume.gameObject.SetActive(true);
-        mainVolume.gameObject.SetActive(false);
-
-        currentConfidence = maxConfidence * classmate.classmateType.standing / 10;
-        decayRateConfidence = 1;
-        timerBar.maxValue = currentConfidence;
-
-        timerBar.gameObject.SetActive(true);
 
         //eventSystem.SetSelectedGameObject(choices[0]);
 
@@ -125,20 +102,14 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        GameManager.instance.gamePaused = false;
         dialoguePlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
-        timerBar.gameObject.SetActive(false);
-
-        classmate.ExitInteraction();
-        classmate = null;
+        talkCam.Priority = 0;
 
         atEnd = false;
-
-        vignette.intensity.value = 0;
-        talkVolume.gameObject.SetActive(false);
-        mainVolume.gameObject.SetActive(true);
     }
 
     void ContinueStory()
@@ -206,13 +177,13 @@ public class DialogueManager : MonoBehaviour
                 case PORTRAIT_TAG:
                     break;
                 case STANDING_TAG:
-                    classmate.classmateType.standing += int.Parse(tagValue);
+                    Debug.LogWarning("standing:" + tagValue + " - This tag is not needed for mother");
                     break;
                 case CONFIDENCE_TAG:
-                    currentConfidence += int.Parse(tagValue);
+                    Debug.LogWarning("confidence:" + tagValue + " - This tag is not needed for mother");
                     break;
                 case DECAY_TAG:
-                    decayRateConfidence += float.Parse(tagValue);
+                    Debug.LogWarning("decay:" + tagValue + " - This tag is not needed for mother");
                     break;
                 case BUTTON_TAG:
                     string[] splitValue = tagValue.Split('.');

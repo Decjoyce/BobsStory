@@ -10,6 +10,7 @@ public class Classmates : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera talkCam;
     [SerializeField] Transform returnPosition;
     [SerializeField] Transform[] modelPositions;
+    [SerializeField] bool isSitting;
     public ClassmateType classmateType;
 
     private void Start()
@@ -41,7 +42,7 @@ public class Classmates : MonoBehaviour
     public void ChangeType(ClassmateType type)
     {
         classmateType = type;
-        classmateType.ChangeModels(modelPositions);
+        classmateType.ChangeModels(modelPositions, isSitting);
     }
 
 

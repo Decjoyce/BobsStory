@@ -28,10 +28,12 @@ public class GameManager : MonoBehaviour
     public EventSystem eventSystemRef;
 
     private ClassmateManager cm;
+    [SerializeField] MainMenu mainMenu;
+    [SerializeField] LevelLoader levelLoader;
 
     //Functionality
     public bool gamePaused = false;
-    public static int day;
+    public static int week;
     public bool afternoon;
 
     //Room
@@ -42,9 +44,6 @@ public class GameManager : MonoBehaviour
     //Effects
     [SerializeField] Animator fadeAnim;
 
-    //Events
-    public UnityEvent OnAfternoon;
-
     private void Start()
     {
         ChangeRoom("Hallway");
@@ -52,25 +51,10 @@ public class GameManager : MonoBehaviour
 
     public void SkipToAfternoon()
     {
-        StartCoroutine(TransitionToAfternoon());
+        week++;
+        levelLoader.LoadLevel(2);
     }
 
-    IEnumerator TransitionToAfternoon()
-    {
-        fadeAnim.SetBool("fade", true);
-        gamePaused = true;
-        yield return new WaitForSeconds(3f);
-        gamePaused = false;
-        fadeAnim.SetBool("fade", false);
-        cm.SetUpClassmates();
-        afternoon = true;
-        OnAfternoon.Invoke();
-    }
-
-    public void GoHome()
-    {
-
-    }
 
     public void ChangeRoom(string nameOfRoom)
     {

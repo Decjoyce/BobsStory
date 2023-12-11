@@ -32,11 +32,13 @@ public class CameraManager : MonoBehaviour
     [SerializeField] CinemachineTargetGroup targetGroup;
     private CinemachineRecomposer recomposer;
     private Transform targetLookAt;
+    private bool enableCamZoom = true;
 
     // Update is called once per frame
     void Update()
     {
-        SetCamZoom();
+        if(enableCamZoom)
+            SetCamZoom();
     }
 
     void SetCamZoom()
@@ -49,10 +51,17 @@ public class CameraManager : MonoBehaviour
 
     public void ChangeCamera(Vector3 newRoomStart, float newRoomSize, int camIndex)
     {
+        enableCamZoom = true;
         roomSize = newRoomSize;
         roomStart = newRoomStart;
         currentCam.transform.position = camRoomPositions[camIndex].position;
         recomposer.m_ZoomScale = 1;
+    }
+
+    public void ChangeToBedroomCamera()
+    {
+        enableCamZoom = false;
+        currentCam.transform.position = camRoomPositions[3].position;
     }
 
     public void FocusCameraOnObject(Transform newlookAt)

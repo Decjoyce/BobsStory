@@ -6,8 +6,8 @@ How was school, honey? Did you make any new friends?
     +[No]
         -> Truth
 === Lie ===
-Oh my god that is just amazing!
+Oh my god that is just amazing! #end:
     -> END
 === Truth ===
-Well, don't you worry sweetie, I'm sure you'll make some tomorrow...
-    -> END
+Well, don't you worry sweetie, I'm sure you'll make some  tomorrow...#end:
+        -> END
