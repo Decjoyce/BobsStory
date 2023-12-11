@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public Animator anim;
     public float TransistionTime = 1.5f;
+
+    public AudioSource source;
+    public AudioClip Clip;
+
+    public GameObject music;
+    
     public void LoadLevel()
     {
         StartCoroutine(LevelLoadingtime(SceneManager.GetActiveScene().buildIndex + 1));
@@ -16,9 +22,17 @@ public class MainMenu : MonoBehaviour
     IEnumerator LevelLoadingtime(int loadingTime)
     {
         anim.SetTrigger("Play");
-
+        
+        music.SetActive(false);
+        Invoke(nameof(FightingSound), 2);
+        
         yield return new WaitForSeconds(TransistionTime);
 
         SceneManager.LoadScene(loadingTime);
+    }
+
+    void FightingSound()
+    {
+        source.PlayOneShot(Clip);
     }
 }
