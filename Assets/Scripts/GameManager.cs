@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         ChangeRoom("Hallway");
         jocksStanding = startingstanding_Jocks;
         nerdsStanding = startingstanding_Nerds;
+        nerdsStanding = startingstanding_Geeks;
     }
 
     public void SkipToAfternoon()
@@ -68,13 +69,13 @@ public class GameManager : MonoBehaviour
         switch (classmateType)
         {
             case "JOCK":
-                jocksStanding += amount;
+                jocksStanding = amount;
                 break;
             case "NERD":
-                nerdsStanding += amount;
+                nerdsStanding = amount;
                 break;
             case "GEEK":
-                geeksStanding += amount;
+                geeksStanding = amount;
                 break;
         }
     }

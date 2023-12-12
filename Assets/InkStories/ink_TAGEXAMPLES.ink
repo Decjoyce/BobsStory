@@ -5,7 +5,7 @@ Layout Tags:
 #speaker:Terry - This changes the display name to jerry
 #portrait:Happy - This changes the display face to the happy variant
 Stat Tags:
-#standing:5 - this will increase the player's Standing with the particular classmates by 5 points
+#standing:5 - this will change the player's Standing with the particular classmates to the value
 #confidence:10 - this will increase the player's confidence by 10, resulting in more time in the conversation
 #decay:0.5 - this will change the decay rate to 0.5, resulting in the confidence decaying slower
 Functionality Tags:
