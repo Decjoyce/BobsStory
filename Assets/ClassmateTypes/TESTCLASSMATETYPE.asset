@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e7e8d996851c34d9c204a00bc8b3e4, type: 3}
   m_Name: TESTCLASSMATETYPE
   m_EditorClassIdentifier: 
-  classmateType: Jocks
+  classmateType: JOCK
   modelsStanding:
   - {fileID: 9037781372625212, guid: 7616fe0ed2a703c4f90a041dd59784bd, type: 3}
   modelsSitting:
   - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
   - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}
-  standing: 10
   inkJSONFile: {fileID: 4900000, guid: d56816571cbc74d4aa757aebda234cdd, type: 3}

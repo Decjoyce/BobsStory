@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Slider timerBar;
+    [SerializeField] private GameObject faceUI;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -25,11 +26,12 @@ public class DialogueManager : MonoBehaviour
     private bool dialoguePlaying;
 
     public Classmates classmate;
+    string typeofClassmate;
 
     [Header("Tag Handling")]
     [SerializeField] private TextMeshProUGUI displayNameText;
 
-    //ink Tag
+    //ink Tags
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string STANDING_TAG = "standing";
@@ -95,14 +97,27 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(Classmates mate)
     {
         classmate = mate;
+        typeofClassmate = classmate.classmateType.classmateType;
         currentStory = new Story(classmate.classmateType.inkJSONFile.text);
         dialoguePlaying = true;
         dialoguePanel.SetActive(true);
+        faceUI.SetActive(false);
 
         talkVolume.gameObject.SetActive(true);
         mainVolume.gameObject.SetActive(false);
 
-        currentConfidence = maxConfidence * classmate.classmateType.standing / 10;
+        switch (typeofClassmate)
+        {
+            case "JOCK":
+                currentConfidence = maxConfidence * GameManager.jocksStanding / 10;
+                break;
+            case "NERD":
+                currentConfidence = maxConfidence * GameManager.nerdsStanding / 10;
+                break;
+            case "GEEK":
+                currentConfidence = maxConfidence * GameManager.geeksStanding / 10;
+                break;
+        }
         decayRateConfidence = 1;
         timerBar.maxValue = currentConfidence;
 
@@ -129,6 +144,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
+        faceUI.SetActive(true);
         timerBar.gameObject.SetActive(false);
 
         classmate.ExitInteraction();
@@ -206,7 +222,8 @@ public class DialogueManager : MonoBehaviour
                 case PORTRAIT_TAG:
                     break;
                 case STANDING_TAG:
-                    classmate.classmateType.standing += int.Parse(tagValue);
+                    GameManager.instance.IncreaseStanding(typeofClassmate, int.Parse(tagValue));
+                    GameManager.instance.playerRef.GetComponent<PlayerStats>().CalculateHappiness();
                     break;
                 case CONFIDENCE_TAG:
                     currentConfidence += int.Parse(tagValue);

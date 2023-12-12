@@ -8,7 +8,6 @@ public class ClassmateType : ScriptableObject
     public string classmateType;
     public GameObject[] modelsStanding;
     public GameObject[] modelsSitting;
-    public int standing;
     public TextAsset inkJSONFile;
 
     public virtual void ChangeModels(Transform[] modelPositions, bool sitting)

@@ -1,4 +1,4 @@
-What's up? #speaker:Tom #decay:10
+What's up? #speaker:Tom #decay:1
 ->Choice01
 == Choice01 ==
     +[Hey]
@@ -9,13 +9,13 @@ What's up? #speaker:Tom #decay:10
         -> Response01_03
         
 === Response01_01 ===
-What do you want?
+What do you want? #standing:10
     -> Choice02
 === Response01_02 ===
-Cool...
+Cool... ? #standing:6
     -> Choice02
 === Response01_03 ===
-Then, what do you want?
+Then, what do you want? ? #standing:0
     -> Choice02
 
 == Choice02 ==

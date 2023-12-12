@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using static PlayerStats;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class GameManager : MonoBehaviour
     public static int week;
     public bool afternoon;
 
+    public static int jocksStanding, nerdsStanding, geeksStanding;
+    [SerializeField] private int startingstanding_Jocks, startingstanding_Nerds, startingstanding_Geeks;
+
+    public PlayerEmotionalState emotionalState;
+
     //Room
     public string currentRoom;
     [SerializeField] GameObject roomHall, roomClass, roomCanteen;
@@ -47,6 +53,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangeRoom("Hallway");
+        jocksStanding = startingstanding_Jocks;
+        nerdsStanding = startingstanding_Nerds;
     }
 
     public void SkipToAfternoon()
@@ -55,6 +63,21 @@ public class GameManager : MonoBehaviour
         levelLoader.LoadLevel(2);
     }
 
+    public void IncreaseStanding(string classmateType, int amount)
+    {
+        switch (classmateType)
+        {
+            case "JOCK":
+                jocksStanding += amount;
+                break;
+            case "NERD":
+                nerdsStanding += amount;
+                break;
+            case "GEEK":
+                geeksStanding += amount;
+                break;
+        }
+    }
 
     public void ChangeRoom(string nameOfRoom)
     {
