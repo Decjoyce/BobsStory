@@ -7333,7 +7333,7 @@ PrefabInstance:
     - target: {fileID: 5533024388137512711, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
       propertyPath: TransistionTime
-      value: 22
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7306339561389770157, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
