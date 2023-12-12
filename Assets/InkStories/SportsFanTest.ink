@@ -15,7 +15,7 @@ What do you want? #standing:10
 Cool... ? #standing:6
     -> Choice02
 === Response01_03 ===
-Then, what do you want? ? #standing:0
+Then, what do you want? ? #standing:1
     -> Choice02
 
 == Choice02 ==
