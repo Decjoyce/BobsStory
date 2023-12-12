@@ -20,6 +20,14 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         cm = GetComponent<ClassmateManager>();
+        if (!gameHasStarted)
+        {
+            jocksStanding = startingstanding_Jocks;
+            nerdsStanding = startingstanding_Nerds;
+            nerdsStanding = startingstanding_Geeks;
+        }
+            
+        gameHasStarted = true;
     }
     #endregion
 
@@ -33,6 +41,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] LevelLoader levelLoader;
 
     //Functionality
+    public static bool gameHasStarted;
     public bool gamePaused = false;
     public static int week;
     public bool afternoon;
@@ -53,9 +62,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ChangeRoom("Hallway");
-        jocksStanding = startingstanding_Jocks;
-        nerdsStanding = startingstanding_Nerds;
-        nerdsStanding = startingstanding_Geeks;
     }
 
     public void SkipToAfternoon()
