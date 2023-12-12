@@ -23,14 +23,17 @@ public class PlayerStats : MonoBehaviour
     {
         //playerHappiness = (jocks.standing + nerds.standing + geeks.standing) / 30 * 100; //This is the average standing the player has with each classmate group as a percentage. Probs gonna change this because doing good relies on you making a lot of friends
 
-/*        if (jocks.standing > playerHappiness)
-            playerHappiness = jocks.standing;
+        int highestStanding = 0;
+        if (GameManager.jocksStanding > highestStanding)
+            highestStanding = GameManager.jocksStanding;
+        
+        if(GameManager.nerdsStanding > highestStanding)
+            highestStanding = GameManager.nerdsStanding;
 
-        if (nerds.standing > playerHappiness)
-            playerHappiness = nerds.standing;
+        if (GameManager.geeksStanding > highestStanding)
+            highestStanding = GameManager.geeksStanding;
 
-        if (geeks.standing > playerHappiness)
-            playerHappiness = geeks.standing;*/
+        playerHappiness = highestStanding;
 
         if (playerHappiness >= minToBeHappy)
         {
