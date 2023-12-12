@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36892,12 +36892,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 6.3225716e-19
+      value: -0.000000003719987
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.066754e-18
+      value: 1.9871627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -36907,7 +36907,7 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.053342488
+      value: 0.053342484
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -37080,6 +37080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHappiness: 0
+  CurrentHappiness: 0
   jocks: {fileID: 11400000, guid: 2c2bee900b7f65b468f3cf574247ac19, type: 2}
   nerds: {fileID: 11400000, guid: 6b238f36ff3af874795a0d7c0795eb11, type: 2}
   geeks: {fileID: 11400000, guid: e33c84dc317ecb741a105835f342e921, type: 2}
