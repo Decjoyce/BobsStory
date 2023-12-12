@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         {
             jocksStanding = startingstanding_Jocks;
             nerdsStanding = startingstanding_Nerds;
-            nerdsStanding = startingstanding_Geeks;
+            geeksStanding = startingstanding_Geeks;
         }
             
         gameHasStarted = true;

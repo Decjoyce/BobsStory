@@ -109,13 +109,13 @@ public class DialogueManager : MonoBehaviour
         switch (typeofClassmate)
         {
             case "JOCK":
-                currentConfidence = maxConfidence * GameManager.jocksStanding / 10;
+                currentConfidence = maxConfidence * GameManager.jocksStanding / 10 + 10;
                 break;
             case "NERD":
-                currentConfidence = maxConfidence * GameManager.nerdsStanding / 10;
+                currentConfidence = maxConfidence * GameManager.nerdsStanding / 10 + 10;
                 break;
             case "GEEK":
-                currentConfidence = maxConfidence * GameManager.geeksStanding / 10;
+                currentConfidence = maxConfidence * GameManager.geeksStanding / 10 + 10;
                 break;
         }
         decayRateConfidence = 1;
