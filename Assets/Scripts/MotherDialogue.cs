@@ -12,6 +12,7 @@ using Cinemachine;
 
 public class MotherDialogue : MonoBehaviour
 {
+    public GameObject PressSpace;
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -48,6 +49,7 @@ public class MotherDialogue : MonoBehaviour
     {
         dialoguePlaying = false;
         dialoguePanel.SetActive(false);
+        PressSpace.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -85,6 +87,7 @@ public class MotherDialogue : MonoBehaviour
         dialoguePlaying = true;
         dialoguePanel.SetActive(true);
 
+
         //eventSystem.SetSelectedGameObject(choices[0]);
 
         atEnd = false;
@@ -110,6 +113,7 @@ public class MotherDialogue : MonoBehaviour
         talkCam.Priority = 0;
 
         atEnd = false;
+        PressSpace.SetActive(false);
     }
 
     void ContinueStory()
