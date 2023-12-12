@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public float playerHappiness;
+    public float CurrentHappiness;
 
     [SerializeField] ClassmateType jocks, nerds, geeks;
 
@@ -34,6 +35,7 @@ public class PlayerStats : MonoBehaviour
             highestStanding = GameManager.geeksStanding;
 
         playerHappiness = highestStanding;
+        CurrentHappiness = playerHappiness;
 
         if (playerHappiness >= minToBeHappy)
         {
