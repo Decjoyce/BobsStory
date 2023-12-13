@@ -14584,6 +14584,9 @@ MonoBehaviour:
   playerRef: {fileID: 8056594743581301056}
   playerGraphicsRef: {fileID: 5918658850898152905}
   bench: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77, type: 3}
+  Bed: {fileID: 1045808137119015828, guid: 20e5b74612e5e5341ad7dcabf66310f5, type: 3}
+  BenchMainMenu: {fileID: 982889370337163648, guid: be8ed291c7b77fd4f878540f5e6750ff,
+    type: 3}
   eventSystemRef: {fileID: 0}
   mainMenu: {fileID: 1524725639}
   levelLoader: {fileID: 1524725641}
@@ -39880,12 +39883,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000003719987
+      value: -0.000000003719987
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.9871627e-10
+      value: 1.9871627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
