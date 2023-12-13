@@ -14672,10 +14672,10 @@ MonoBehaviour:
   timerBar: {fileID: 2091115393}
   faceUI: {fileID: 456676456}
   makefriendUI: {fileID: 1424743462}
-  dialogueFacePlayer: {fileID: 0}
-  dialogueFaceNPC: {fileID: 0}
-  playerFaces: {fileID: 0}
-  NPCFaces: {fileID: 0}
+  dialogueFacePlayer: {fileID: 1523878711}
+  dialogueFaceNPC: {fileID: 461555893}
+  playerFaces: {fileID: 11400000, guid: 18bcc6691459522418f1a9a823b7e1a5, type: 2}
+  NPCFaces: {fileID: 11400000, guid: 4e39e42b4e1ccc04a85eb47f586346ab, type: 2}
   choices:
   - {fileID: 1487791606}
   - {fileID: 770369206}
@@ -39878,12 +39878,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000003719987
+      value: -6.3225716e-19
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1.9871627e-10
+      value: 4.066754e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -39893,7 +39893,7 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.053342484
+      value: 0.053342488
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}

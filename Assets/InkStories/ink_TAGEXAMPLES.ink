@@ -2,12 +2,12 @@ Tags:
 #(NameOfTag):(ValueOfTag)
 Examples:
 Layout Tags:
-#speaker:Terry - This changes the display name to jerry
-#portrait:Happy - This changes the display face to the happy variant
+#face_player:string - This changes the player's face to the specified variant (happy, neutral, sad, depressed)
+#face_npc:string - This changes the npc's face to the specified variant (happy, neutral, sad, depressed)
 Stat Tags:
-#standing:5 - this will change the player's Standing with the particular classmates to the value
-#confidence:10 - this will increase the player's confidence by 10, resulting in more time in the conversation
-#decay:0.5 - this will change the decay rate to 0.5, resulting in the confidence decaying slower
+#standing:int - this will increment the player's Standing with the particular classmate by the value
+#confidence:int - this will increase the player's confidence by the value, resulting in more time in the conversation
+#decay:float - this will change the decay rate to the value, resulting in the confidence decaying slower
 Functionality Tags:
-#button.time;3 - this disables a choice after 3 seconds
-#end: - this denotes that the conversation has reached the end
+#button.time;float - this disables a choice after a delay of value seconds
+#end: - this denotes that the conversation has reached the end where the player must press space to continue

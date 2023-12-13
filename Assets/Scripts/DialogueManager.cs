@@ -282,11 +282,11 @@ public class DialogueManager : MonoBehaviour
         {
             case "happy":
                 return whoseFace.happyFace;
-            case "Neutral":
+            case "neutral":
                 return whoseFace.neutralFace;
-            case "Sad":
+            case "sad":
                 return whoseFace.sadFace;
-            case "Depressed":
+            case "depressed":
                 return whoseFace.depressedFace;
             default:
                 Debug.LogError("Error Incorrect Face");
