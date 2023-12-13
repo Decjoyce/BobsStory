@@ -39878,12 +39878,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -6.3225716e-19
+      value: 6.3225716e-19
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.066754e-18
+      value: -4.066754e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -40176,7 +40176,7 @@ MonoBehaviour:
   characterController: {fileID: 717652038985027393}
   graphics: {fileID: 5918658850898152905}
   anim: {fileID: 1655780866}
-  speed: 50
+  speed: 3
   turnSmoothTime: 0.1
   isMoving: 0
 --- !u!1 &8056594743581301056
