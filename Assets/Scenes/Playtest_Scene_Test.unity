@@ -14583,6 +14583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRef: {fileID: 8056594743581301056}
   playerGraphicsRef: {fileID: 5918658850898152905}
+  bench: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77, type: 3}
   eventSystemRef: {fileID: 0}
   mainMenu: {fileID: 1524725639}
   levelLoader: {fileID: 1524725641}

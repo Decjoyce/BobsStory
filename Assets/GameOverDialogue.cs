@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class GameOverDialogue : MonoBehaviour
 {
     public TextAsset inkJSONFile;
+    public GameObject Bench;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     //References
     public GameObject playerRef;
     public GameObject playerGraphicsRef;
+    public GameObject bench;
     public EventSystem eventSystemRef;
 
     private ClassmateManager cm;
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
-        levelLoader.LoadLevel(4);
+        bench.SetActive(true);
     }
 
     public void SkipToAfternoon()
