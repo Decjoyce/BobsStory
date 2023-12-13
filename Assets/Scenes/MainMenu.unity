@@ -7220,6 +7220,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu Bench Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 982889370337163648, guid: be8ed291c7b77fd4f878540f5e6750ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4694994545484299889, guid: be8ed291c7b77fd4f878540f5e6750ff,
         type: 3}
       propertyPath: m_LocalPosition.x
