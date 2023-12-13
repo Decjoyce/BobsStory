@@ -8,12 +8,10 @@ public class PlayerStats : MonoBehaviour
     public float playerHappiness;
     public float CurrentHappiness;
 
-    [SerializeField] ClassmateType jocks, nerds, geeks;
-
     [SerializeField] float minToBeHappy, minToBeNeutral, minToBeSad;
 
     [SerializeField] Image faceImage;
-    [SerializeField] Sprite happyFace, neutralFace, sadFace, depressedFace;
+    [SerializeField] FaceManager playerFaces;
 
     private void Start()
     {
@@ -40,22 +38,22 @@ public class PlayerStats : MonoBehaviour
         if (playerHappiness >= minToBeHappy)
         {
             GameManager.instance.emotionalState = PlayerEmotionalState.happy;
-            faceImage.sprite = happyFace;
+            faceImage.sprite = playerFaces.happyFace;
         }
         else if(playerHappiness < minToBeHappy && playerHappiness >= minToBeNeutral)
         {
             GameManager.instance.emotionalState = PlayerEmotionalState.neutral;
-            faceImage.sprite = neutralFace;
+            faceImage.sprite = playerFaces.neutralFace;
         }
         else if(playerHappiness < minToBeNeutral && playerHappiness >= minToBeSad)
         {
             GameManager.instance.emotionalState = PlayerEmotionalState.sad;
-            faceImage.sprite = sadFace;
+            faceImage.sprite = playerFaces.sadFace;
         }
         else if (playerHappiness < minToBeSad)
         {
             GameManager.instance.emotionalState = PlayerEmotionalState.depressed;
-            faceImage.sprite = depressedFace;
+            faceImage.sprite = playerFaces.depressedFace;
         }
     }    
     

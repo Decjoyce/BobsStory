@@ -22,6 +22,7 @@ public class Classmates : MonoBehaviour
 
     public void EnterInteraction()
     {
+        Debug.Log(classmateType.classmateType);
         interact.OnExitInteraction.Invoke();
         interact.enabled = false;
         GameManager.instance.gamePaused = true;

@@ -9,7 +9,7 @@ What's up? #speaker:Tom #decay:1
         -> Response01_03
         
 === Response01_01 ===
-What do you want? #standing:10
+What do you want? #standing:11
     -> Choice02
 === Response01_02 ===
 Cool... ? #standing:6

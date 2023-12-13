@@ -5,6 +5,7 @@ using Cinemachine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using static PlayerStats;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,9 +65,9 @@ public class GameManager : MonoBehaviour
         ChangeRoom("Hallway");
     }
     
-    public void GameOver(ClassmateType friend)
+    public void GameOver()
     {
-
+        levelLoader.LoadLevel(4);
     }
 
     public void SkipToAfternoon()

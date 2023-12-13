@@ -63,7 +63,7 @@ public class GameOverDialogue : MonoBehaviour
         }
         if (currentStory.currentChoices.Count == 0 && !currentStory.canContinue && Input.GetButtonDown("Submit"))
         {
-            GameManager.instance.GameOver(classmate.classmateType);
+            //GameManager.instance.GameOver(classmate.classmateType);
         }
     }
 
