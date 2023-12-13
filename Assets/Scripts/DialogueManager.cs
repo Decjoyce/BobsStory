@@ -8,14 +8,24 @@ using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.EventSystems;
+using System.IO.Pipes;
 
 public class DialogueManager : MonoBehaviour
 {
+
     [Header("Dialogue UI")]
+    [SerializeField] private GameObject talkMenu;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Slider timerBar;
     [SerializeField] private GameObject faceUI;
+
+    [Header("Face UI")]
+    [SerializeField] private MakeFriendHandler makefriendUI;
+    [SerializeField] private Image dialogueFacePlayer;
+    [SerializeField] private Image dialogueFaceNPC;
+    [SerializeField] private FaceManager playerFaces;
+    [SerializeField] private FaceManager NPCFaces;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -33,7 +43,8 @@ public class DialogueManager : MonoBehaviour
 
     //ink Tags
     private const string SPEAKER_TAG = "speaker";
-    private const string PORTRAIT_TAG = "portrait";
+    private const string FACE_PLAYER_TAG = "face_player";
+    private const string FACE_NPC_TAG = "face_npc";
     private const string STANDING_TAG = "standing";
     private const string CONFIDENCE_TAG = "confidence";
     private const string DECAY_TAG = "decay";
@@ -57,7 +68,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         dialoguePlaying = false;
-        dialoguePanel.SetActive(false);
+        talkMenu.SetActive(false);
 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -67,7 +78,6 @@ public class DialogueManager : MonoBehaviour
             index++;
         }
         talkVolume.profile.TryGet(out vignette);
-
     }
 
     private void Update()
@@ -94,14 +104,28 @@ public class DialogueManager : MonoBehaviour
             ExitDialogueMode();
     }
 
+    public void EnterMakeFriendMode()
+    {
+        makefriendUI.classmateType = classmate.classmateType;
+        makefriendUI.gameObject.SetActive(true);
+        dialoguePanel.SetActive(false);
+    }
+    public void ExitMakeFriendMode()
+    {
+        makefriendUI.classmateType = null;
+        makefriendUI.gameObject.SetActive(false);
+        dialoguePanel.SetActive(true);
+    }
+
     public void EnterDialogueMode(Classmates mate)
     {
         classmate = mate;
         typeofClassmate = classmate.classmateType.classmateType;
         currentStory = new Story(classmate.classmateType.inkJSONFile.text);
         dialoguePlaying = true;
-        dialoguePanel.SetActive(true);
+        talkMenu.SetActive(true);
         faceUI.SetActive(false);
+        timerBar.gameObject.SetActive(true);
 
         talkVolume.gameObject.SetActive(true);
         mainVolume.gameObject.SetActive(false);
@@ -138,16 +162,17 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         dialoguePlaying = false;
-        dialoguePanel.SetActive(false);
+        talkMenu.SetActive(false);
         dialogueText.text = "";
 
         faceUI.SetActive(true);
         timerBar.gameObject.SetActive(false);
 
         classmate.ExitInteraction();
+        classmate.GetComponent<Collider>().enabled = false;
         classmate = null;
 
         atEnd = false;
@@ -155,6 +180,8 @@ public class DialogueManager : MonoBehaviour
         vignette.intensity.value = 0;
         talkVolume.gameObject.SetActive(false);
         mainVolume.gameObject.SetActive(true);
+
+        ExitMakeFriendMode();
     }
 
     void ContinueStory()
@@ -217,9 +244,13 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
+                    //displayNameText.text = tagValue;
                     break;
-                case PORTRAIT_TAG:
+                case FACE_PLAYER_TAG:
+                    dialogueFacePlayer.sprite = GetTheFace(tagValue, playerFaces);
+                    break;
+                case FACE_NPC_TAG:
+                    dialogueFaceNPC.sprite = GetTheFace(tagValue, NPCFaces);
                     break;
                 case STANDING_TAG:
                     GameManager.instance.IncreaseStanding(typeofClassmate, int.Parse(tagValue));
@@ -242,6 +273,24 @@ public class DialogueManager : MonoBehaviour
                     Debug.LogWarning("Checked Tag is not being Handled: " + tag);
                     break;
             }
+        }
+    }
+
+    Sprite GetTheFace(string value, FaceManager whoseFace)
+    {
+        switch (value)
+        {
+            case "happy":
+                return whoseFace.happyFace;
+            case "Neutral":
+                return whoseFace.neutralFace;
+            case "Sad":
+                return whoseFace.sadFace;
+            case "Depressed":
+                return whoseFace.depressedFace;
+            default:
+                Debug.LogError("Error Incorrect Face");
+                return null;
         }
     }
 

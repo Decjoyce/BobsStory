@@ -8,10 +8,12 @@ public class Classmates : MonoBehaviour
     private Interact interact;
     [SerializeField] private DialogueManager dm;
     [SerializeField] CinemachineVirtualCamera talkCam;
-    [SerializeField] Transform returnPosition;
+    [SerializeField] GameObject gameOverUI;
     [SerializeField] Transform[] modelPositions;
     [SerializeField] bool isSitting;
     public ClassmateType classmateType;
+    public GameOverDialogue gameOverDialogue;
+
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class Classmates : MonoBehaviour
         CameraManager.instance.currentCam.Priority = 10;
         talkCam.Priority = 0;
         GameManager.instance.playerRef.GetComponentInChildren<PlayerHeartbeat>().enabled = true;
-        interact.OnEnterInteraction.Invoke();
+        interact.ExitInteraction();
     }
 
     public void ChangeType(ClassmateType type)
