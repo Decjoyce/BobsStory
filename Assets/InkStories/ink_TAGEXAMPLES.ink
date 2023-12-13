@@ -10,4 +10,5 @@ Stat Tags:
 #decay:float - this will change the decay rate to the value, resulting in the confidence decaying slower
 Functionality Tags:
 #button.time;float - this disables a choice after a delay of value seconds
+#askfriend: - this will display the ask to be friend option
 #end: - this denotes that the conversation has reached the end where the player must press space to continue

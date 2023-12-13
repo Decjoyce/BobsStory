@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject faceUI;
 
     [Header("Face UI")]
+    [SerializeField] private GameObject askfriendButton;
     [SerializeField] private MakeFriendHandler makefriendUI;
     [SerializeField] private Image dialogueFacePlayer;
     [SerializeField] private Image dialogueFaceNPC;
@@ -49,6 +50,7 @@ public class DialogueManager : MonoBehaviour
     private const string CONFIDENCE_TAG = "confidence";
     private const string DECAY_TAG = "decay";
     private const string BUTTON_TAG = "button";
+    private const string ASKFRIEND_TAG = "askfriend";
     private const string END_TAG = "end";
 
 
@@ -186,6 +188,7 @@ public class DialogueManager : MonoBehaviour
 
     void ContinueStory()
     {
+        askfriendButton.SetActive(false);
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
@@ -265,6 +268,9 @@ public class DialogueManager : MonoBehaviour
                 case BUTTON_TAG:
                     string[] splitValue = tagValue.Split('.');
                     ButtonTagHandle(splitValue);
+                    break;
+                case ASKFRIEND_TAG:
+                    askfriendButton.SetActive(true);
                     break;
                 case END_TAG:
                     atEnd = true;
