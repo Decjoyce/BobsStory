@@ -14671,6 +14671,7 @@ MonoBehaviour:
   dialogueText: {fileID: 710166180}
   timerBar: {fileID: 2091115393}
   faceUI: {fileID: 456676456}
+  askfriendButton: {fileID: 1879901308}
   makefriendUI: {fileID: 1424743462}
   dialogueFacePlayer: {fileID: 1523878711}
   dialogueFaceNPC: {fileID: 461555893}
@@ -32620,10 +32621,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1879901309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 134.35, y: -21.94}
+  m_SizeDelta: {x: 268.7, y: 43.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1809753782
 MonoBehaviour:
@@ -33878,7 +33879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1879901309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33894,9 +33895,9 @@ RectTransform:
   - {fileID: 1809753781}
   m_Father: {fileID: 1701931532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 5, y: -231.90002}
   m_SizeDelta: {x: 268.7, y: 43.88}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1879901311
@@ -39878,12 +39879,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 6.3225716e-19
+      value: -6.3225716e-19
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.066754e-18
+      value: 4.066754e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}

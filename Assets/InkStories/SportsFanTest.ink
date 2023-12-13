@@ -19,6 +19,7 @@ Then, what do you want? ? #standing:1 #face_player:sad
     -> Choice02
 
 == Choice02 ==
+#askfriend: #askfriend:
     +[Talk about football]
         -> Choice02_01
     +[Talk about school]
@@ -38,7 +39,7 @@ Then, what do you want? ? #standing:1 #face_player:sad
         -> Choice03_04
 
 === Choice02_02 ===
-#confidence:2
+#confidence:2 
     +[Geography's poxy, init]
         -> Choice03_04
     +[This place is a proper kip, init]
@@ -47,7 +48,7 @@ Then, what do you want? ? #standing:1 #face_player:sad
         -> Choice03_04
         
 === Choice02_03 ===
-#confidence:-50
+#confidence:-50 
     +[Lovely weather we're having right?]
         -> Choice03_04
     +[The weather is so bad]
