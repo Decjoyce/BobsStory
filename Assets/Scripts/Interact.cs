@@ -9,7 +9,9 @@ public class Interact : MonoBehaviour
     [SerializeField] KeyCode interactionKey = KeyCode.F;
     [SerializeField] KeyCode altInteractionKey = KeyCode.Space;
     [SerializeField] Transform camLookAt;
-
+    
+    public AudioSource Source;
+    
     public bool canInteract;
 
     private void Update()
@@ -53,5 +55,10 @@ public class Interact : MonoBehaviour
     public void UnFocusCam()
     {
         CameraManager.instance.UnFocusCamera();
+    }
+
+    public void Bell()
+    {
+        Source.PlayDelayed(1.8f);
     }
 }
