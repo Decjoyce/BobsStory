@@ -15,7 +15,8 @@ public class TypingEffect : MonoBehaviour
     void Start()
     {
         StartCoroutine(ShowText());
-
+        
+        
 
     }
 
@@ -28,7 +29,13 @@ public class TypingEffect : MonoBehaviour
                 textMesh.text = currentText;
                 yield return new WaitForSeconds(delay);
             }
+
         
+
     }
-   
+
+    
+        
+    
+
 }
