@@ -1,22 +1,18 @@
 What's up? #face_player:happy #decay:1
 ->Choice01
 == Choice01 ==
-    +[Hey]
+    +[Hey there]
         -> Response01_01
-    +[Not much bro]
+    +[I like your t-shirt bro]
         -> Response01_02
-    +[Oh, nothing...]
-        -> Response01_03
         
 === Response01_01 ===
 What do you want? #standing:11
     -> Choice02
 === Response01_02 ===
-Cool... ? #standing:6
+Thank you I guess #standing:6
     -> Choice02
-=== Response01_03 ===
-Then, what do you want? ? #standing:1 #face_player:sad
-    -> Choice02
+
 
 == Choice02 ==
 #askfriend: #askfriend:
@@ -24,7 +20,7 @@ Then, what do you want? ? #standing:1 #face_player:sad
         -> Choice02_01
     +[Talk about school]
         -> Choice02_02
-    +[Talk about the weather]
+    +[Talk about his appearence]
         -> Choice02_03
     +[Tell a joke]
     -> Choice02_04
@@ -32,29 +28,29 @@ Then, what do you want? ? #standing:1 #face_player:sad
 === Choice02_01 ===
 #confidence:5
     +[What team do yous support?]
-        -> Choice03_04
+        -> PlayHolder
     +[Did yous see the games last night?]
         -> Response02_02
     +[Football is so dumb, am I right?]
-        -> Choice03_04
+        -> PlayHolder
 
 === Choice02_02 ===
 #confidence:2 
     +[Geography's poxy, init]
-        -> Choice03_04
+        -> PlayHolder
     +[This place is a proper kip, init]
-        -> Choice03_04
+        -> PlayHolder
     +[The school's great!]
-        -> Choice03_04
+        -> PlayHolder
         
 === Choice02_03 ===
-#confidence:-50 
-    +[Lovely weather we're having right?]
-        -> Choice03_04
-    +[The weather is so bad]
-        -> Choice03_04
+#confidence:10
+    +[Nice shirt what band is that?] #standing:2
+        -> Choice03_03_01
+    +['Interesting' choice of clothing.] #standing:-3
+        -> Choice03_03_02
     +[Nevermind]
-        -> Choice03_04
+        -> PlayHolder
 
 === Choice02_04 ===
     +[Why'd the chicken cross the road?]
@@ -75,6 +71,12 @@ What?
 === Response02_02 ===
 Yeah, United are so bad, can't believe they haven't sacked that fella yet.
 -> DONE
-=== Choice03_04 ===
-Then what do you want?
+=== PlayHolder ===
+PlaceHolder.
+-> END
+=== Choice03_03_01 ===
+Ye its no biggie, its a small indie band.
+-> END
+=== Choice03_03_02 ===
+Says the one with purple shirt and sandels.#end:
     -> END
