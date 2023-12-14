@@ -15,4 +15,4 @@ MonoBehaviour:
   happyFace: {fileID: -319017993, guid: 738cbf430c2a0de49b3515819dd85241, type: 3}
   sadFace: {fileID: -740801204, guid: 738cbf430c2a0de49b3515819dd85241, type: 3}
   depressedFace: {fileID: 21300000, guid: 99a8c698e7aa70f458651da18b1b0e7b, type: 3}
-  neutralFace: {fileID: 21300000, guid: 574a58b8189e02343abd46bc9a7a4d7b, type: 3}
+  neutralFace: {fileID: 21300000, guid: 395c8e9d9cd99014fab429354514a205, type: 3}
