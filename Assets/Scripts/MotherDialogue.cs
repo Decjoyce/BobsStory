@@ -59,7 +59,7 @@ public class MotherDialogue : MonoBehaviour
             index++;
         }
 
-        EnterDialogueMode();
+        //EnterDialogueMode();
 
     }
 
