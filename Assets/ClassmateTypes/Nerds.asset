@@ -18,4 +18,4 @@ MonoBehaviour:
   modelsSitting:
   - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
   - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}
-  inkJSONFile: {fileID: 4900000, guid: d56816571cbc74d4aa757aebda234cdd, type: 3}
+  inkJSONFile: {fileID: 4900000, guid: c33549f264ab1a549a2f08066ce3d2e7, type: 3}
