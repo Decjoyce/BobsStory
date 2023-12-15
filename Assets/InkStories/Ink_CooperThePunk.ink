@@ -7,10 +7,10 @@ What's up? #face_player:happy #decay:1
         -> Response01_02
         
 === Response01_01 ===
-What do you want? #standing:11
+What do you want? #standing:1
     -> Choice02
 === Response01_02 ===
-Thank you I guess #standing:6
+Thank you I guess #standing:2
     -> Choice02
 
 
@@ -26,41 +26,41 @@ Thank you I guess #standing:6
     -> Choice02_04
     
 === Choice02_01 ===
-#confidence:5
-    +[What team do yous support?]
+#confidence:-2
+    +[What team do yous support?] #standing:-3
         -> PlayHolder
-    +[Did yous see the games last night?]
+    +[Did yous see the games last night?] #standing: -2
         -> Response02_02
-    +[Football is so dumb, am I right?]
+    +[Football is so dumb, am I right?] #standing:2
         -> PlayHolder
 
 === Choice02_02 ===
-#confidence:2 
-    +[Geography's poxy, init]
+#confidence:-10
+    +[Geography's poxy, init] #standing: -2
         -> PlayHolder
-    +[This place is a proper kip, init]
+    +[This place is a proper kip, init] #standing:4
         -> PlayHolder
-    +[The school's great!]
+    +[School's great!] #standing:-5
         -> PlayHolder
         
 === Choice02_03 ===
 #confidence:10
     +[Nice shirt what band is that?] #standing:2
         -> Choice03_03_01
-    +['Interesting' choice of clothing.] #standing:-3
+    +['Interesting' choice of clothing.] #standing:-4 #confidence: -5
         -> Choice03_03_02
-    +[Nevermind]
+    +[Nevermind] #standing:-1
         -> PlayHolder
 
 === Choice02_04 ===
-    +[Why'd the chicken cross the road?]
+    +[Why'd the chicken cross the road?]#standing:-5 
         -> Choice02_04a
     +[Knock-Knock]
         -> Choice02_04a
 ==== Choice02_04a ====
-    +[To Get to the other side]
+    +[So it can destroy society] #standing: 2
         -> Response02_04a
-    +[Nevermind... it's lame]
+    +[Nevermind... it's lame] #standing: 0
         -> Response02_04b
 ===== Response02_04a ====
 What?
@@ -69,14 +69,14 @@ What?
 What?
 -> Choice02_04a
 === Response02_02 ===
-Yeah, United are so bad, can't believe they haven't sacked that fella yet.
+Dude I don't care about football. #end
 -> DONE
 === PlayHolder ===
-PlaceHolder.
+PlaceHolder
 -> END
 === Choice03_03_01 ===
-Ye its no biggie, its a small indie band.
+Ye its no biggie, its a small indie band.#end:
 -> END
 === Choice03_03_02 ===
-Says the one with purple shirt and sandels.#end:
+Says the one with purple shirt and sandels.#end: 
     -> END

@@ -6,5 +6,5 @@ What's up man?
     +[Wait, I forgot to do something]
         -> END
 === Befriended ===
-Ofcourse man, Do you wanna hang out later?
+Ofcourse man, Do you wanna hang out later? #confidence: -20
 -> END
