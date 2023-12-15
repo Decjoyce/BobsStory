@@ -7,10 +7,10 @@ What's up? #face_player:happy #decay:1
         -> Response01_02
         
 === Response01_01 ===
-What do you want? #standing:11
+What do you want? #standing:1
     -> Choice02
 === Response01_02 ===
-Thank you I guess #standing:6
+Thank you I guess #standing:2
     -> Choice02
 
 
@@ -47,13 +47,13 @@ Thank you I guess #standing:6
 #confidence:10
     +[Nice shirt what band is that?] #standing:2
         -> Choice03_03_01
-    +['Interesting' choice of clothing.] #standing:-3
+    +['Interesting' choice of clothing.] #standing:-3 #confidence: -5
         -> Choice03_03_02
     +[Nevermind]
         -> PlayHolder
 
 === Choice02_04 ===
-    +[Why'd the chicken cross the road?]
+    +[Why'd the chicken cross the road?]#standing:-5 
         -> Choice02_04a
     +[Knock-Knock]
         -> Choice02_04a
@@ -75,8 +75,8 @@ Yeah, United are so bad, can't believe they haven't sacked that fella yet.
 PlaceHolder.
 -> END
 === Choice03_03_01 ===
-Ye its no biggie, its a small indie band.
+Ye its no biggie, its a small indie band.#end:
 -> END
 === Choice03_03_02 ===
-Says the one with purple shirt and sandels.#end:
+Says the one with purple shirt and sandels.#end: 
     -> END
