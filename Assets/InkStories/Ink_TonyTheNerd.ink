@@ -1,4 +1,4 @@
-What's up? #face_player:neutral #decay:1
+What's up? #face_player:sad #decay:1
 ->Choice01
 == Choice01 ==
     +[Hey]
@@ -7,7 +7,7 @@ What's up? #face_player:neutral #decay:1
         -> Response01_02
         
 === Response01_01 ===
-What do you want? #standing:3
+What do you want? #standing:2
     -> Choice02
 === Response01_02 ===
 Cool...? #standing:1
