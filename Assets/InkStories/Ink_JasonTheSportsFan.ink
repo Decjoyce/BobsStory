@@ -28,12 +28,13 @@ Then, what do you want? ? #standing:1 #face_player:sad
     -> Choice02_04
     
 === Choice02_01 ===
-#confidence:5
+#confidence:10
     +[Did you see the games last night?]#standing:1
         -> Choice02_02_01
     +[Football is so dumb, am I right?] #standing:-5
         -> Choice02_02_02
 ==== Choice02_02_01 ====
+#confidence:10
 Yeah, United are so bad, can't believe they haven't sacked that fella yet.
     +[Yeah proper, how many games is that without a win?]  #standing:1
         -> Choice02_02_01_01
@@ -42,7 +43,7 @@ Yeah, United are so bad, can't believe they haven't sacked that fella yet.
     +[No they are not! United are the best!]
         -> Choice02_02_03_01
 ===== Choice02_02_01_01 =====
-#confidence:5
+#confidence:10
 This is what, their 5th game now? It's not even the fact that they're losing - it's who they're losing to. Like who even are Marino?
     +[They sound like a pizza] 
         -> Choice02_02_01_01_01
@@ -53,16 +54,16 @@ This is what, their 5th game now? It's not even the fact that they're losing - i
     +[Clearly better than United] #standing:2
         -> Choice02_02_01_01_04
 ====== Choice02_02_01_01_01 ======
-#confidence:-25
-Yeah I guess?
+#confidence:-5
+Yeah I guess? #end:
 ->END
 ====== Choice02_02_01_01_02 ======
-#confidence:-15
+#confidence:-10
 Fella, I didn't ask for a history lesson. #end:
 ->END
 ====== Choice02_02_01_01_03 ======
 #confidence:-5
-Relax mate I was only joking
+Relax mate I was only joking #end:
 ->END
 ====== Choice02_02_01_01_04 ======
 #confidence:10
@@ -126,6 +127,3 @@ Fella what age are you? #end:
 You're a weirdo #end:
 -> END
         
-=== Choice03_04 ===
-Then what do you want?
-    -> END
