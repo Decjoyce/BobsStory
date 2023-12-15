@@ -24,57 +24,108 @@ Then, what do you want? ? #standing:1 #face_player:sad
         -> Choice02_01
     +[Talk about school]
         -> Choice02_02
-    +[Talk about the weather]
-        -> Choice02_03
     +[Tell a joke]
     -> Choice02_04
     
 === Choice02_01 ===
 #confidence:5
-    +[What team do yous support?]
-        -> Choice03_04
-    +[Did yous see the games last night?]
-        -> Response02_02
-    +[Football is so dumb, am I right?]
-        -> Choice03_04
-
+    +[Did you see the games last night?]#standing:1
+        -> Choice02_02_01
+    +[Football is so dumb, am I right?] #standing:-5
+        -> Choice02_02_02
+==== Choice02_02_01 ====
+Yeah, United are so bad, can't believe they haven't sacked that fella yet.
+    +[Yeah proper, how many games is that without a win?]  #standing:1
+        -> Choice02_02_01_01
+    +[To be fair, he doesn't have a lot to work with] 
+        -> Choice02_02_02_01
+    +[No they are not! United are the best!]
+        -> Choice02_02_03_01
+===== Choice02_02_01_01 =====
+#confidence:5
+This is what, their 5th game now? It's not even the fact that they're losing - it's who they're losing to. Like who even are Marino?
+    +[They sound like a pizza] 
+        -> Choice02_02_01_01_01
+    +[They are club founded in 1903 by William Fagen] #standing:-2
+        -> Choice02_02_01_01_02
+    +[Don't you talk bad on Marino, they're my favourite team] #standing:-1
+        -> Choice02_02_01_01_03
+    +[Clearly better than United] #standing:2
+        -> Choice02_02_01_01_04
+====== Choice02_02_01_01_01 ======
+#confidence:-25
+Yeah I guess?
+->END
+====== Choice02_02_01_01_02 ======
+#confidence:-15
+Fella, I didn't ask for a history lesson. #end:
+->END
+====== Choice02_02_01_01_03 ======
+#confidence:-5
+Relax mate I was only joking
+->END
+====== Choice02_02_01_01_04 ======
+#confidence:10
+Haha yeah proper... I've to go to class now but I'll talk to you later #end:
+->END 
+===== Choice02_02_02_01 =====
+What are you talking about? They literally have some of the best players in the world
+->END
+===== Choice02_02_03_01 =====
+#confidence:-10
+Clearly not if they just lost to Marino
+    +[They sound like a pizza] 
+        -> Choice02_02_01_01_01
+    +[I don't care, don't talk bad on United] #standing:-2
+        -> Choice02_02_01_01_03
+->END
+==== Choice02_02_02 ====
+#confidence:-25
+Says the weirdo wearing a purple vest and sliders #end:
+->END
 === Choice02_02 ===
 #confidence:2 
-    +[Geography's poxy, init]
-        -> Choice03_04
     +[This place is a proper kip, init]
-        -> Choice03_04
+        -> Choice02_03
     +[The school's great!]
-        -> Choice03_04
+        -> Choice02_03
         
 === Choice02_03 ===
-#confidence:-50 
-    +[Lovely weather we're having right?]
-        -> Choice03_04
-    +[The weather is so bad]
-        -> Choice03_04
-    +[Nevermind]
-        -> Choice03_04
-
+#confidence:-20
+I hate this place, I'd rather be playing football
+    +[Talk about football]
+        -> Choice02_01
+    +[Football is so dumb]
+        -> Choice02_02_02
 === Choice02_04 ===
     +[Why'd the chicken cross the road?]
         -> Choice02_04a
     +[Knock-Knock]
-        -> Choice02_04a
+        -> Choice02_04b
 ==== Choice02_04a ====
+What?
     +[To Get to the other side]
         -> Response02_04a
     +[Nevermind... it's lame]
-        -> Response02_04b
+        -> Nevermind
+==== Choice02_04b ====
+Fella what?
+    +[Knock Knock]
+        -> knockknock
+    +[Nevermind... it's lame]
+        -> Nevermind
 ===== Response02_04a ====
-What?
--> Choice02_04a
-===== Response02_04b ====
-What?
--> Choice02_04a
-=== Response02_02 ===
-Yeah, United are so bad, can't believe they haven't sacked that fella yet.
--> DONE
+#standing:-2
+Get away from me #end:
+-> END
+==knockknock==
+Fella what age are you? #end:
+->END 
+===== Nevermind ====
+#confidence:-10 #standing:-2
+You're a weirdo #end:
+-> END
+        
 === Choice03_04 ===
 Then what do you want?
     -> END
