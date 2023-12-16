@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
+        levelLoader.LoadLevel(4);
         bench.SetActive(true);
         BenchMainMenu.SetActive(true);
         Bed.SetActive(false);

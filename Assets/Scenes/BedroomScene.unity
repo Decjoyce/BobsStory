@@ -2115,7 +2115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701354556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015541431, y: 0.08357796, z: -0.0013036412, w: 0.9963792}
+  m_LocalRotation: {x: 0.0155414175, y: 0.08357796, z: -0.0013036403, w: 0.9963792}
   m_LocalPosition: {x: -1.24, y: 3.26, z: -2.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2599,14 +2599,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768798258}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9581bce90b175c94d90c6320cc82cdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerRef: {fileID: 8056594743581301056}
   playerGraphicsRef: {fileID: 5918658850898152905}
-  bench: {fileID: 4765881272222154333}
+  bench: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77, type: 3}
   Bed: {fileID: 1045808137119015828, guid: 20e5b74612e5e5341ad7dcabf66310f5, type: 3}
   BenchMainMenu: {fileID: 982889370337163648, guid: be8ed291c7b77fd4f878540f5e6750ff,
     type: 3}
@@ -8858,7 +8858,7 @@ PrefabInstance:
     - target: {fileID: 7666475284929159888, guid: ac3c1151ea0c15b40b168a0adb1380cd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015541431
+      value: 0.0155414175
       objectReference: {fileID: 0}
     - target: {fileID: 7666475284929159888, guid: ac3c1151ea0c15b40b168a0adb1380cd,
         type: 3}
@@ -8868,7 +8868,7 @@ PrefabInstance:
     - target: {fileID: 7666475284929159888, guid: ac3c1151ea0c15b40b168a0adb1380cd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0013036412
+      value: -0.0013036403
       objectReference: {fileID: 0}
     - target: {fileID: 7666475284929159888, guid: ac3c1151ea0c15b40b168a0adb1380cd,
         type: 3}
@@ -10941,6 +10941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Bench Scene '
       objectReference: {fileID: 0}
+    - target: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4580450101539838769, guid: 6d38e0da9f1dd404981016b8cdface77,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12097,12 +12102,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027167908120139769}
   m_Mesh: {fileID: 6607839196387346367, guid: 26df65dffd33342428d836b6cf08399d, type: 3}
---- !u!1 &4765881272222154333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77,
-    type: 3}
-  m_PrefabInstance: {fileID: 3672143180920303517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4795006174942088978
 GameObject:
   m_ObjectHideFlags: 0
