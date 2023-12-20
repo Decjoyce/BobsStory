@@ -2614,6 +2614,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   levelLoader: {fileID: 0}
   gamePaused: 0
+  week: 1
   afternoon: 0
   startingstanding_Jocks: 0
   startingstanding_Nerds: 0
@@ -14491,6 +14492,7 @@ MonoBehaviour:
   characterController: {fileID: 717652038985027393}
   graphics: {fileID: 5918658850898152905}
   anim: {fileID: 1655780866}
+  ManagerObj: {fileID: 768798258}
   speed: 3
   turnSmoothTime: 0.1
   isMoving: 0

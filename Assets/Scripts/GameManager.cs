@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public static int week;
     public bool afternoon;
+    public bool WeekChange = false;
 
     public static int jocksStanding, nerdsStanding, geeksStanding;
     [SerializeField] private int startingstanding_Jocks, startingstanding_Nerds, startingstanding_Geeks;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         levelLoader.LoadLevel(4);
-        bench.SetActive(true);
+        //bench.SetActive(true);
         BenchMainMenu.SetActive(true);
         Bed.SetActive(false);
     }
@@ -80,7 +81,15 @@ public class GameManager : MonoBehaviour
     {
         week++;
         levelLoader.LoadLevel(2);
+        Debug.Log(week);
+        if(week > 0)
+        {
+            WeekChange = true;
+        }
+
     }
+
+    
 
     public void IncreaseStanding(string classmateType, int amount)
     {

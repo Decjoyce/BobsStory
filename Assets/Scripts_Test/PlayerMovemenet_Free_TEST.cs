@@ -7,6 +7,8 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     public CharacterController characterController;
     public GameObject graphics;
     public Animator anim;
+    private GameManager Manager;
+    public GameObject ManagerObj;
 
     public float speed = 6f;
 
@@ -17,6 +19,7 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     void Start()
     {
         isMoving = false;
+        Manager = ManagerObj.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,12 @@ public class PlayerMovmenetFreeTest : MonoBehaviour
     {
         if(!GameManager.instance.gamePaused)
             Movement();
+        //Debug.Log(speed);
+
+        if(Manager.WeekChange == true)
+        {
+            speed = 5f;
+        }
     }
 
     public void Movement()
