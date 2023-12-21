@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -589,7 +589,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8919012664769003678, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &26948312
@@ -1135,7 +1135,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3949705339107251021, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &75279974
@@ -1896,7 +1896,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2700354272823574166, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &119624136
@@ -3645,7 +3645,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6325977317201532600, guid: 0aed63713f1462c489838cd49943b69d, type: 3}
 --- !u!1 &189112504
@@ -4503,7 +4503,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6781501162044267730, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1001 &265452692
@@ -8940,7 +8940,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6464466014302168486, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &476496271
@@ -9836,7 +9836,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6206450301262281439, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &524401627
@@ -11919,7 +11919,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 632285366974254814, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &650627992
@@ -13015,7 +13015,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2690104283684236836, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!114 &701261664 stripped
@@ -14463,7 +14463,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2186430941476567602, guid: 0aed63713f1462c489838cd49943b69d, type: 3}
 --- !u!1 &761354797
@@ -14591,8 +14591,8 @@ MonoBehaviour:
   mainMenu: {fileID: 1524725639}
   levelLoader: {fileID: 1524725641}
   gamePaused: 0
-  week: 1
   afternoon: 0
+  WeekChange: 0
   startingstanding_Jocks: 1
   startingstanding_Nerds: 1
   startingstanding_Geeks: 1
@@ -15091,7 +15091,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3788662155342037325, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &782998924
@@ -18608,13 +18608,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963086506}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -12.433437, y: 0.15467763, z: -19.760527}
   m_LocalScale: {x: 255.65498, y: 400.00003, z: 168.00372}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438755967}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!23 &963086508
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18983,7 +18983,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8029296228613045016, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &984393149
@@ -23286,13 +23286,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260851438}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -22.145054, y: 0.15467763, z: -19.760527}
   m_LocalScale: {x: 255.65498, y: 400.00003, z: 168.00372}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438755967}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!23 &1260851440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24923,13 +24923,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408855648}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -2.437075, y: 0.15467763, z: -19.760527}
   m_LocalScale: {x: 255.65498, y: 400.00003, z: 168.00372}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438755967}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!23 &1408855650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25807,7 +25807,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2818699144585490751, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &1433631285
@@ -29479,7 +29479,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -629719859055844128, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &1665751028
@@ -33862,7 +33862,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5687037337211671132, guid: 8a8d88cc1eec7e244bb7903b8c33d3fe, type: 3}
 --- !u!1 &1879901308
@@ -39884,12 +39884,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 6.3225716e-19
+      value: -0.000000003719987
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.066754e-18
+      value: 1.9871627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
@@ -39899,7 +39899,7 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.053342488
+      value: 0.053342484
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
