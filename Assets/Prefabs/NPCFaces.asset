@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef6c4f5746b00c4f9267b2a2c4ed9e8, type: 3}
   m_Name: NPCFaces
   m_EditorClassIdentifier: 
-  happyFace: {fileID: -319017993, guid: 738cbf430c2a0de49b3515819dd85241, type: 3}
-  sadFace: {fileID: -740801204, guid: 738cbf430c2a0de49b3515819dd85241, type: 3}
-  depressedFace: {fileID: 0}
-  neutralFace: {fileID: 21300000, guid: 574a58b8189e02343abd46bc9a7a4d7b, type: 3}
+  happyFace: {fileID: 21300000, guid: bc799f93136e73a4093c5a540df90a53, type: 3}
+  sadFace: {fileID: 21300000, guid: 246213e37d5c8e043bf71cf28111e613, type: 3}
+  depressedFace: {fileID: 21300000, guid: 9f1a043ff5ee89d4abd239b1fd6cc27a, type: 3}
+  neutralFace: {fileID: 21300000, guid: 917eaa861cce1df449067857998b9a61, type: 3}
