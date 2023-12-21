@@ -28,7 +28,7 @@ Thank you I guess #standing:2
 === Choice02_01 ===
 #confidence:-2
     +[What team do yous support?] #standing:-3
-        -> PlayHolder
+        -> Response02_02
     +[Did yous see the games last night?] #standing: -2
         -> Response02_02
     +[Football is so dumb, am I right?] #standing:2
@@ -36,12 +36,12 @@ Thank you I guess #standing:2
 
 === Choice02_02 ===
 #confidence:-10
-    +[Geography's poxy, init] #standing: -2
-        -> PlayHolder
-    +[This place is a proper kip, init] #standing:4
-        -> PlayHolder
+    +[Man I love History, its such an interesting topic.] #standing: -2
+        -> Response03_01
+    +[This place is a proper kip, init.] #standing:4
+        -> Response03_02
     +[School's great!] #standing:-5
-        -> PlayHolder
+        -> Response03_03
         
 === Choice02_03 ===
 #confidence:10
@@ -63,20 +63,35 @@ Thank you I guess #standing:2
     +[Nevermind... it's lame] #standing: 0
         -> Response02_04b
 ===== Response02_04a ====
-What?
+Man what a great joke. Fuck society! #end #face_npc:happy #face_player:happy
 -> Choice02_04a
 ===== Response02_04b ====
 What?
 -> Choice02_04a
 === Response02_02 ===
-Dude I don't care about football. #end
+Dude I don't care about football. #end #face_npc:neutral 
 -> DONE
+== Response02_01 ==
+Ye man its for normies. #end #face_npc:happy
+-> END
 === PlayHolder ===
 PlaceHolder
 -> END
-=== Choice03_03_01 ===
-Ye its no biggie, its a small indie band.#end:
+== Response03_01 ==
+Man get a life. #end: #face_player:depressed
 -> END
+== Response03_02 ==
+Fuck ye! #face_player:happy #face_npc:happy
+-> END
+== Response03_03 ==
+OH MY GOD! YOU ARE SUCH A LOSER! #end #face_player:depressed
+-> END
+=== Choice03_03_01 ===
+Ye its no biggie, its a small indie band.#end: #face_npc:happy face_player:happy
+-> END
+== Choice03_03_03 ==
+Ok then? #end #face_npc:neutral #face_player:sad
+->END
 === Choice03_03_02 ===
-Says the one with purple shirt and sandels.#end: 
+Says the one with purple shirt and sandels.#end: #face_player:sad
     -> END
