@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classmateType: Punk
   modelsStanding:
-  - {fileID: 9037781372625212, guid: 7616fe0ed2a703c4f90a041dd59784bd, type: 3}
+  - {fileID: 4954846741363769342, guid: 720f89dcdfb50f543805624b8846b3b3, type: 3}
   modelsSitting:
   - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
   - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}

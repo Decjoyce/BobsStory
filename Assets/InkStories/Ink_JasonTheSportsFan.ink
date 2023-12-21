@@ -92,7 +92,7 @@ Says the weirdo wearing a purple vest and sliders #end:
         -> Choice02_03
         
 === Choice02_03 ===
-#confidence:-20
+#confidence:-5
 I hate this place, I'd rather be playing football
     +[Talk about football]
         -> Choice02_01
