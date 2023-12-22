@@ -1809,8 +1809,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  myText: This is a limited edition statue of Dick Richardson I got from the Hill
-    of Silence global release event. That was a great game.
+  myText: This is a limited edition statue I got from the Hill of Silence global
+    release event. That was a great game.
   textMesh: {fileID: 648020774}
 --- !u!1 &681294369
 GameObject:
@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  myText: I don't remember this poster being here seems oddly familiar though?
+  myText: This is still my favourite movie. Such a tragic tale...
   textMesh: {fileID: 693034760}
 --- !u!114 &693034760
 MonoBehaviour:
