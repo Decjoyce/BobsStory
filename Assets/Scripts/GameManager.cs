@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] bool menu;
+
     //References
     public GameObject playerRef;
     public GameObject playerGraphicsRef;
@@ -60,15 +62,23 @@ public class GameManager : MonoBehaviour
     public string currentRoom;
     [SerializeField] GameObject roomHall, roomClass, roomCanteen;
     [SerializeField] CameraManager camManager;
+    bool gameHappening;
+
 
     //Effects
     [SerializeField] Animator fadeAnim;
 
     private void Start()
     {
+        if(!menu)
         ChangeRoom("Hallway");
     }
     
+    public void ResetGame()
+    {
+        gameHasStarted = false;
+    }
+
     public void GameOver()
     {
         levelLoader.LoadLevel(4);

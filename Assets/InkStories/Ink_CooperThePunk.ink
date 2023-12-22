@@ -58,9 +58,9 @@ Thank you I guess #standing:2
     +[Knock-Knock]
         -> Choice02_04a
 ==== Choice02_04a ====
-    +[So it can destroy society] #standing: 2
+    +[So it can destroy society] #standing:2
         -> Response02_04a
-    +[Nevermind... it's lame] #standing: 0
+    +[Nevermind... it's lame] #standing:0
         -> Response02_04b
 ===== Response02_04a ====
 Man what a great joke. Fuck society! #end #face_npc:happy #face_player:happy
@@ -69,10 +69,10 @@ Man what a great joke. Fuck society! #end #face_npc:happy #face_player:happy
 What?
 -> Choice02_04a
 === Response02_02 ===
-Dude I don't care about football. #end #face_npc:neutral 
+Dude I don't care about football. #end: #face_npc:neutral 
 -> DONE
 == Response02_01 ==
-Ye man its for normies. #end #face_npc:happy
+Ye man its for normies. #end: #face_npc:happy
 -> END
 === PlayHolder ===
 PlaceHolder
