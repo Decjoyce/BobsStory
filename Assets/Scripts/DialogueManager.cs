@@ -32,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    public TextMeshProUGUI PressSpace;
+
     private Story currentStory;
 
     private bool dialoguePlaying;
