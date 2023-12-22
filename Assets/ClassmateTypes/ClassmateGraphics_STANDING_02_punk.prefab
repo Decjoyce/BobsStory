@@ -372,7 +372,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdcde6ad963e18843bef57ecf50ba3ac, type: 2}
+  - {fileID: 2100000, guid: e74d71660bd5dfb488162903f5a4a93f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -514,7 +514,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d99644c6c3c4d04eab84ac3a272201c, type: 2}
+  - {fileID: 2100000, guid: 06265af0f574668459dd1b371603f061, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -753,7 +753,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8c44a1a3cabff40844165821dc160d, type: 2}
+  - {fileID: 2100000, guid: 39292a8e4302f944b8c6a2d1327037e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 7019102005136712338}
   - component: {fileID: 7444449064967192355}
   m_Layer: 0
-  m_Name: ClassmateGraphics_STANDING_02
+  m_Name: ClassmateGraphics_STANDING_02_punk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4edfc48204c1b934eb3ff8740fcac764, type: 2}
+  - {fileID: 2100000, guid: 24af922189118f048b24ff530a964e82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1193,7 +1193,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f638b7aaf1d74a408f410fc0b3e50ed, type: 2}
+  - {fileID: 2100000, guid: a071b586c1ec9dd428b96ed3d2cff3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

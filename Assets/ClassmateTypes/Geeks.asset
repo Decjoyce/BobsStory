@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classmateType: GEEK
   modelsStanding:
-  - {fileID: 4954846741363769342, guid: 720f89dcdfb50f543805624b8846b3b3, type: 3}
+  - {fileID: 4954846741363769342, guid: a2c02f017aa44e347b36ac3a147d2709, type: 3}
   modelsSitting:
-  - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
-  - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}
+  - {fileID: 3083739754716047988, guid: 6205ebdf28726c94c878a7e6e866e6c3, type: 3}
+  - {fileID: 6997534367981935411, guid: 3158aaf6f7193474191f12b3b906d2a0, type: 3}
   inkJSONFile: {fileID: 4900000, guid: 13e617fb5be173c4ab168a9b528d108c, type: 3}

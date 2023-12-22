@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classmateType: NERD
   modelsStanding:
-  - {fileID: 4954846741363769342, guid: 720f89dcdfb50f543805624b8846b3b3, type: 3}
+  - {fileID: 4954846741363769342, guid: 36a2ba667a8ce07468884ce564836fb6, type: 3}
   modelsSitting:
-  - {fileID: 3083739754716047988, guid: 61f5966b73745f240ae4cae0c8e46653, type: 3}
-  - {fileID: 6997534367981935411, guid: 7666a66e0629ae2479c21406804779db, type: 3}
+  - {fileID: 6997534367981935411, guid: 3ef40531be92aa84d9a18a373f82ca30, type: 3}
+  - {fileID: 3083739754716047988, guid: 9748ea3217c7ef74fb6d4d57cf0599e6, type: 3}
   inkJSONFile: {fileID: 4900000, guid: c33549f264ab1a549a2f08066ce3d2e7, type: 3}

@@ -372,7 +372,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fdcde6ad963e18843bef57ecf50ba3ac, type: 2}
+  - {fileID: 2100000, guid: fb43b42947c5754419aea920b8b5a0dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -514,7 +514,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d99644c6c3c4d04eab84ac3a272201c, type: 2}
+  - {fileID: 2100000, guid: c0b7f11a79bb3714fb4ae0b0df98f306, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -753,7 +753,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8c44a1a3cabff40844165821dc160d, type: 2}
+  - {fileID: 2100000, guid: c8c1a0d507b1d884289a43a86dc0f3f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 7019102005136712338}
   - component: {fileID: 7444449064967192355}
   m_Layer: 0
-  m_Name: ClassmateGraphics_STANDING_02
+  m_Name: ClassmateGraphics_STANDING_02 Nerd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,7 +1193,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f638b7aaf1d74a408f410fc0b3e50ed, type: 2}
+  - {fileID: 2100000, guid: a780e5e29a36eb245a6bbbc0c785a8f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
