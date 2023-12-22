@@ -7,54 +7,41 @@ public class FacingAway : MonoBehaviour
 {
     Transform player;
     bool playerIsNear;
-    [SerializeField]
-    Transform[] NPCs;
     public float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
+    Transform ogRot;
 
-    private Quaternion[] NPCStartRots = new Quaternion[10];
 
     private void Start()
     {
-        //interaction.GetComponent<Interation>();
+        ogRot = transform;
         player = GameManager.instance.playerRef.transform;
-        for(int i = 0; i < NPCs.Length; i++)
-        {
-            NPCStartRots[i] = NPCs[i].rotation;
-        }
     }
 
     private void Update()
     {
         if (playerIsNear)
         {
-            foreach(Transform npc in NPCs)
-            {
-                Vector3 direction = npc.transform.position - player.transform.position;
-                Vector3 rot = Quaternion.LookRotation(direction).eulerAngles;
-                npc.rotation = Quaternion.Euler(0, rot.y, 0);
-            }
+            Vector3 direction = transform.position - player.transform.position;
+            Vector3 rot = Quaternion.LookRotation(-direction).eulerAngles;
+            float newRot = Mathf.LerpAngle(transform.rotation.y, rot.y, turnSmoothTime * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, newRot, 0);
         }
     }
 
-    public void FacePlayer()
+    void OnTriggerEnter(Collider other)
     {
-        foreach (Transform npc in NPCs)
+        if (other.CompareTag("Player"))
         {
-            Vector3 rot = Quaternion.LookRotation(player.transform.position).eulerAngles;
-            npc.rotation = Quaternion.Euler(0, rot.y, 0);
+            playerIsNear = true;
         }
     }
 
-    public void SetPlayerNear(bool yes)
+    private void OnTriggerExit(Collider other)
     {
-        playerIsNear = yes;
-        if (!playerIsNear)
+        if (other.CompareTag("Player"))
         {
-            for (int i = 0; i < NPCs.Length; i++)
-            {
-                NPCs[i].rotation = NPCStartRots[i];
-            }
+            playerIsNear = false;
+            transform.rotation = ogRot.rotation;
         }
     }
 
