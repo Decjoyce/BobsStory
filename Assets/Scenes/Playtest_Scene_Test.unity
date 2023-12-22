@@ -16285,6 +16285,7 @@ MonoBehaviour:
   - {fileID: 770369206}
   - {fileID: 438144434}
   - {fileID: 171533292}
+  PressSpace: {fileID: 0}
   classmate: {fileID: 0}
   displayNameText: {fileID: 0}
   eventSystem: {fileID: 458002933}
@@ -44584,12 +44585,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000003719987
+      value: 0.000000003719987
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1.9871627e-10
+      value: -1.9871627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
