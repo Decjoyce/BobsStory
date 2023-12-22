@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9581bce90b175c94d90c6320cc82cdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: 0
+  menu: 1
   playerRef: {fileID: 8056594743581301056}
   playerGraphicsRef: {fileID: 5918658850898152905}
   bench: {fileID: 1340809121346306625, guid: 6d38e0da9f1dd404981016b8cdface77, type: 3}
@@ -2732,6 +2732,7 @@ MonoBehaviour:
   roomClass: {fileID: 0}
   roomCanteen: {fileID: 0}
   camManager: {fileID: 0}
+  weekText: {fileID: 0}
   fadeAnim: {fileID: 0}
 --- !u!4 &768798260
 Transform:
