@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e7e8d996851c34d9c204a00bc8b3e4, type: 3}
   m_Name: Geeks
   m_EditorClassIdentifier: 
-  classmateType: Punk
+  classmateType: GEEK
   modelsStanding:
   - {fileID: 4954846741363769342, guid: 720f89dcdfb50f543805624b8846b3b3, type: 3}
   modelsSitting:

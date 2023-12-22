@@ -1,4 +1,4 @@
-What's up? #face_player:happy #decay:1
+What's up? #face_player:happy #decay:1 #face_npc:sad
 ->Choice01
 == Choice01 ==
     +[Hey there]
@@ -63,7 +63,7 @@ Thank you I guess #standing:2
     +[Nevermind... it's lame] #standing:0
         -> Response02_04b
 ===== Response02_04a ====
-Man what a great joke. Fuck society! #end #face_npc:happy #face_player:happy
+Man what a great joke. Fuck society! #end: #face_npc:happy #face_player:happy
 -> Choice02_04a
 ===== Response02_04b ====
 What?
@@ -81,13 +81,14 @@ PlaceHolder
 Man get a life. #end: #face_player:depressed
 -> END
 == Response03_02 ==
-Fuck ye! #face_player:happy #face_npc:happy
+Fuck ye! #end: #face_player:happy #face_npc:happy
 -> END
 == Response03_03 ==
 OH MY GOD! YOU ARE SUCH A LOSER! #end #face_player:depressed
 -> END
 === Choice03_03_01 ===
-Ye its no biggie, its a small indie band.#end: #face_npc:happy face_player:happy
+#end: #face_npc:happy #face_player:happy
+Ye its no biggie, its a small indie band.
 -> END
 == Choice03_03_03 ==
 Ok then? #end #face_npc:neutral #face_player:sad
