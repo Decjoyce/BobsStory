@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
     public Animator anim;
     public Transform credits;
+    public AnimationClip clip;
+    bool stop;
 
-    private void Update()
+    private void Start()
     {
-        Debug.Log(credits.transform.position.y);
-       if(credits.transform.position.y <= -208)
-        {
-            anim.SetBool("CreditsDone", true);
-        }
+        StartCoroutine(ShowCredits());
+    }
+
+    IEnumerator ShowCredits()
+    {
+        yield return new WaitForSeconds(clip.length);
+        stop = true;
+        anim.SetBool("CreditsDone", true);
+        SceneManager.LoadScene(0);
     }
 
 }

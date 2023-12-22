@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 66108216}
   credits: {fileID: 66108215}
+  clip: {fileID: 7400000, guid: e1b119ec48ffcb64fa980edeb740f48a, type: 2}
 --- !u!1 &804364339
 GameObject:
   m_ObjectHideFlags: 0
