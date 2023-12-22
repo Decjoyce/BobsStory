@@ -1718,8 +1718,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a limited edition statue of Dick Richardson I got from the Hill
-    of Silence global release event. That was a great game.
+  m_text: This is a limited edition statue I got from the Hill of Silence global
+    release event. That was a great game.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I don't remember this poster being here seems oddly familiar though?
+  m_text: This is still my favourite movie. Such a tragic tale...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2617,6 +2617,9 @@ MonoBehaviour:
   gamePaused: 0
   afternoon: 0
   WeekChange: 0
+  fakeJocksStanding: 0
+  fakeNerdsStanding: 0
+  fakeGeeksStanding: 0
   startingstanding_Jocks: 0
   startingstanding_Nerds: 0
   startingstanding_Geeks: 0

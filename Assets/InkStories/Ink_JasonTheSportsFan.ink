@@ -67,7 +67,7 @@ Fella, I didn't ask for a history lesson. #end:
 Relax mate I was only joking #end:
 ->END
 ====== Choice02_02_01_01_04 ======
-#confidence:5 #face_npc:happy #face_player:happy
+#standing:10 #face_npc:happy #face_player:happy
 Haha yeah proper... I've to go to class now but I'll talk to you later #end:
 ->END 
 ===== Choice02_02_02_01 =====

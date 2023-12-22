@@ -26,9 +26,9 @@ What do you want?
 === Choice02_01 ===
 #confidence:-2
 What do you want?
-    +[What team do yous support?] #standing:-3
+    +[What team do yous support?] #standing:-1
         -> Response02_02
-    +[Did yous see the games last night?] #standing:-2
+    +[Did yous see the games last night?] #standing:-1
         -> Response02_02
     +[Football is so dumb, am I right?] #standing:2
         -> PlayHolder
@@ -55,7 +55,7 @@ What do you want?
 
 === Choice02_04 ===
 What do you want?
-    +[Why'd the chicken cross the road?]#standing:-5 
+    +[Why'd the chicken cross the road?]
         -> Choice02_04a
 ==== Choice02_04a ====
 This better be good.
