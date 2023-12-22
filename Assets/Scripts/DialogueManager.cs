@@ -171,7 +171,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePlaying = false;
         talkMenu.SetActive(false);
         dialogueText.text = "";
-
+        PressSpace.text = "";
         faceUI.SetActive(true);
         timerBar.gameObject.SetActive(false);
 
@@ -275,7 +275,8 @@ public class DialogueManager : MonoBehaviour
                     askfriendButton.SetActive(true);
                     break;
                 case END_TAG:
-                    atEnd = true;
+                    atEnd = true; 
+                    PressSpace.text = "Press Space to Continue";
                     break;
                 default:
                     Debug.LogWarning("Checked Tag is not being Handled: " + tag);
