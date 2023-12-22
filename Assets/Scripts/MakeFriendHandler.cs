@@ -30,7 +30,7 @@ public class MakeFriendHandler : MonoBehaviour
         {
             makefriendText.text = "Fella, I barely even know you";
             playerFace.sprite = playerFaces.depressedFace;
-            npcFace.sprite = npcFaces.neutralFace;
+            npcFace.sprite = npcFaces.sadFace;
             nevermindButton.SetActive(false);
             askButton.SetActive(false);
             failureButton.SetActive(true);
@@ -38,4 +38,15 @@ public class MakeFriendHandler : MonoBehaviour
         }
         numTimesAsked++;
     }
+
+    public void ResetMakeFriendUI()
+    {
+        makefriendText.text = "What's up?";
+        playerFace.sprite = playerFaces.neutralFace;
+        npcFace.sprite = npcFaces.happyFace;
+        nevermindButton.SetActive(true);
+        askButton.SetActive(true);
+        failureButton.SetActive(false);
+    }
+
 }

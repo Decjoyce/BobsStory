@@ -12,10 +12,9 @@ What do you want? #standing:1
 === Response01_02 ===
 Thank you I guess #standing:2
     -> Choice02
-
-
 == Choice02 ==
 #askfriend: #askfriend:
+What do you want?
     +[Talk about football]
         -> Choice02_01
     +[Talk about school]
@@ -24,9 +23,9 @@ Thank you I guess #standing:2
         -> Choice02_03
     +[Tell a joke]
     -> Choice02_04
-    
 === Choice02_01 ===
 #confidence:-2
+What do you want?
     +[What team do yous support?] #standing:-3
         -> Response02_02
     +[Did yous see the games last night?] #standing:-2
@@ -36,6 +35,7 @@ Thank you I guess #standing:2
 
 === Choice02_02 ===
 #confidence:-10
+What do you want?
     +[Man I love History, its such an interesting topic.] #standing: -2
         -> Response03_01
     +[This place is a proper kip, init.] #standing:4
@@ -45,6 +45,7 @@ Thank you I guess #standing:2
         
 === Choice02_03 ===
 #confidence:10
+What do you want?
     +[Nice shirt what band is that?] #standing:2
         -> Choice03_03_01
     +['Interesting' choice of clothing.] #standing:-4 #confidence: -5
@@ -53,18 +54,18 @@ Thank you I guess #standing:2
         -> PlayHolder
 
 === Choice02_04 ===
+What do you want?
     +[Why'd the chicken cross the road?]#standing:-5 
         -> Choice02_04a
-    +[Knock-Knock]
-        -> Choice02_04a
 ==== Choice02_04a ====
+This better be good.
     +[So it can destroy society] #standing:2
         -> Response02_04a
     +[Nevermind... it's lame] #standing:0
         -> Response02_04b
 ===== Response02_04a ====
 Man what a great joke. Fuck society! #end: #face_npc:happy #face_player:happy
--> Choice02_04a
+-> END
 ===== Response02_04b ====
 What?
 -> Choice02_04a

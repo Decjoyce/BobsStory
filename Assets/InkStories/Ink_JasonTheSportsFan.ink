@@ -15,11 +15,12 @@ What do you want?
 Cool... ? 
     -> Choice02
 === Response01_03 ===
-Then, what do you want? ? #face_player:sad #face_npc:neutral
+Then, what do you want? #face_player:sad #face_npc:neutral
     -> Choice02
 
 == Choice02 ==
 #askfriend: #askfriend:
+What do you want?
     +[Talk about football]
         -> Choice02_01
     +[Talk about school]
@@ -28,6 +29,7 @@ Then, what do you want? ? #face_player:sad #face_npc:neutral
     -> Choice02_04
     
 === Choice02_01 ===
+What do you want?
     +[Did you see the games last night?]#standing:1
         -> Choice02_02_01
     +[Football is so dumb, am I right?] #standing:-2
@@ -85,6 +87,7 @@ Says the weirdo wearing a purple vest and sliders #end:
 ->END
 === Choice02_02 ===
 #confidence:2 
+What do you want?
     +[This place is a proper kip, init]
         -> Choice02_03
     +[The school's great!]
@@ -98,6 +101,7 @@ I hate this place, I'd rather be playing football
     +[Football is so dumb]
         -> Choice02_02_02
 === Choice02_04 ===
+What do you want?
     +[Why'd the chicken cross the road?]
         -> Choice02_04a
     +[Knock-Knock]

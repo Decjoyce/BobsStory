@@ -15,6 +15,7 @@ Cool...? #standing:1
 
 == Choice02 ==
 #askfriend: #askfriend:
+What do you want?
     +[Talk about football]
         -> Choice02_01
     +[Talk about school]
@@ -26,6 +27,7 @@ Cool...? #standing:1
     
 === Choice02_01 ===
 #confidence:5 #face_npc:sad
+What do you want?
     +[What team do yous support?]
         -> Response03_04
     +[Did yous see the games last night?]
@@ -35,6 +37,7 @@ Cool...? #standing:1
 
 === Choice02_02 ===
 #confidence:5 #face_npc:sad
+What do you want?
     +[Geography's poxy, init]
         -> Response03_04_02
     +[This place is a proper kip, init]
@@ -44,6 +47,7 @@ Cool...? #standing:1
         
 === Choice02_03 ===
 #confidence:7 #face_npc:happy
+What do you want?
     +[Do you like the starwars game?]
         -> Response04
     +[We should have a jedi fight]
@@ -53,9 +57,8 @@ Cool...? #standing:1
 
 === Choice02_04 ===
 #confidence:4 #face_npc:neutral
+What do you want?
     +[Why'd the chicken cross the road?]
-        -> Choice02_04a
-    +[Knock-Knock]
         -> Choice02_04a
 ==== Choice02_04a ====
 #confidence:3 #face_npc:neutral
