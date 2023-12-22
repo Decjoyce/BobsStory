@@ -21,12 +21,13 @@ public class MakeFriendHandler : MonoBehaviour
             askButton.SetActive(false);
             successfulButton.SetActive(true);
         }
-        else
+        else if(GameManager.instance.GetStanding(classmateType.classmateType) < 10)
         {
             makefriendText.text = "Fella, I barely even know you";
             nevermindButton.SetActive(false);
             askButton.SetActive(false);
             failureButton.SetActive(true);
+            GameManager.instance.IncreaseStanding(classmateType.classmateType, -5);
         }
         numTimesAsked++;
     }
