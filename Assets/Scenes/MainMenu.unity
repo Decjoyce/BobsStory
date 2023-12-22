@@ -1037,6 +1037,7 @@ MonoBehaviour:
   roomCanteen: {fileID: 0}
   camManager: {fileID: 0}
   fadeAnim: {fileID: 0}
+  weekText: {fileID: 0}
 --- !u!4 &1252805405
 Transform:
   m_ObjectHideFlags: 0
@@ -7436,17 +7437,22 @@ PrefabInstance:
     - target: {fileID: 6243738087864311883, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.442
       objectReference: {fileID: 0}
     - target: {fileID: 6243738087864311883, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.442
       objectReference: {fileID: 0}
     - target: {fileID: 6243738087864311883, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.442
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243738087864311883, guid: ba049e4386984be498bfc452f5aa3d1c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -551
       objectReference: {fileID: 0}
     - target: {fileID: 6580227686244173822, guid: ba049e4386984be498bfc452f5aa3d1c,
         type: 3}
