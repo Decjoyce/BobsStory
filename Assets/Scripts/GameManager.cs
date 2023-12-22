@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
         //bench.SetActive(true);
         BenchMainMenu.SetActive(true);
         Bed.SetActive(false);
+        gameHasStarted = false;
     }
 
     public void SkipToAfternoon()

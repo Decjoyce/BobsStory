@@ -8,7 +8,6 @@ public class Credits : MonoBehaviour
     public Animator anim;
     public Transform credits;
     public AnimationClip clip;
-    bool stop;
 
     private void Start()
     {
@@ -18,7 +17,6 @@ public class Credits : MonoBehaviour
     IEnumerator ShowCredits()
     {
         yield return new WaitForSeconds(clip.length);
-        stop = true;
         anim.SetBool("CreditsDone", true);
         SceneManager.LoadScene(0);
     }
