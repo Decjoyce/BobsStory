@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MakeFriendHandler : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class MakeFriendHandler : MonoBehaviour
     [SerializeField] private GameObject makefriendUI;
     [SerializeField] private TextMeshProUGUI makefriendText;
     [SerializeField] private GameObject askButton, nevermindButton, successfulButton, failureButton;
+    [SerializeField] private Image playerFace, npcFace;
+    [SerializeField] private FaceManager playerFaces, npcFaces;
     static int numTimesAsked;
 
     public void CheckIfCanMakeFriend()
@@ -17,6 +20,8 @@ public class MakeFriendHandler : MonoBehaviour
         if (GameManager.instance.GetStanding(classmateType.classmateType) > 10)
         {
             makefriendText.text = "Ofcourse man, do you wanna hang out later?";
+            playerFace.sprite = playerFaces.happyFace;
+            npcFace.sprite = npcFaces.happyFace;
             nevermindButton.SetActive(false);
             askButton.SetActive(false);
             successfulButton.SetActive(true);
@@ -24,10 +29,12 @@ public class MakeFriendHandler : MonoBehaviour
         else if(GameManager.instance.GetStanding(classmateType.classmateType) < 10)
         {
             makefriendText.text = "Fella, I barely even know you";
+            playerFace.sprite = playerFaces.depressedFace;
+            npcFace.sprite = npcFaces.neutralFace;
             nevermindButton.SetActive(false);
             askButton.SetActive(false);
             failureButton.SetActive(true);
-            GameManager.instance.IncreaseStanding(classmateType.classmateType, -5);
+            GameManager.instance.IncreaseStanding(classmateType.classmateType, -1);
         }
         numTimesAsked++;
     }

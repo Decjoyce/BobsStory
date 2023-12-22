@@ -19814,7 +19814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1814225385, guid: 7343ecc1ab641a64288fad13f8cf6ffc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 395c8e9d9cd99014fab429354514a205, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28784,6 +28784,10 @@ MonoBehaviour:
   nevermindButton: {fileID: 339196819}
   successfulButton: {fileID: 1409699618}
   failureButton: {fileID: 923718887}
+  playerFace: {fileID: 913636929}
+  npcFace: {fileID: 121899233}
+  playerFaces: {fileID: 11400000, guid: 18bcc6691459522418f1a9a823b7e1a5, type: 2}
+  npcFaces: {fileID: 11400000, guid: 4e39e42b4e1ccc04a85eb47f586346ab, type: 2}
 --- !u!1 &1425963243
 GameObject:
   m_ObjectHideFlags: 0
@@ -44645,12 +44649,12 @@ PrefabInstance:
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000003719987
+      value: -0.000000003719987
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.9871627e-10
+      value: 1.9871627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8185685075326349892, guid: 23d6fe77fd860ae44bf059f5278f123f,
         type: 3}

@@ -64,11 +64,11 @@ Cool...? #standing:1
     +[Nevermind... it's lame]
         -> Response02_04b
 ===== Response02_04a ====
-That's it?? #end: #standing:-5 #face_player:depressed #decay:5 #face_npc:depressed
+That's it?? #end: #standing:-2 #face_player:depressed #decay:5 #face_npc:depressed
 -> END
 
 ===== Response02_04b ====
-What?? #end: #standing:-6  #face_player:depressed #decay:5 #face_npc:depressed
+What?? #end: #standing:-1  #face_player:depressed #decay:5 #face_npc:depressed
 -> END
 
 === Response02_02 ===
@@ -80,7 +80,7 @@ Huh? Oh Yeah i support gryffindor? #end: #standing:2 #face_player:happy #decay:5
 -> END
 
 === Response03_04_01 ===    
-Yeah, football is super dumb... #end: #standing:1 #face_player:neutral #decay:5 #face_npc:confused
+Yeah, football is super dumb... #end: #standing:1 #face_player:neutral #decay:5 #face_npc:neutral
 -> END
 
 === Response03_04_02 ===
@@ -100,7 +100,7 @@ Im down, let's start swinging! #end: #standing:3 #face_player:happy  #decay:5 #f
 -> END
 
 === Response03_04_06 ===
-WHAT?! what the hell are you saying! #end: #standing:-5 #face_player:depressed  #decay:5 #face_npc:depressed
+WHAT?! what the hell are you saying! #end: #standing:-1 #face_player:depressed  #decay:5 #face_npc:depressed
 -> END
 
 === Response04 ===
@@ -122,6 +122,6 @@ My two favourite things! #end: #standing:4 #face_player:happy  #decay:5 #face_np
 -> END
 
 ===Response05_02===
-They all can't be great? #end: #standing:-3  #face_player:sad  #decay:5 #face_npc:neutral
+They all can't be great? #end: #standing:-1  #face_player:sad  #decay:5 #face_npc:neutral
 -> END
 

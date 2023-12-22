@@ -123,6 +123,9 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(Classmates mate)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         classmate = mate;
         typeofClassmate = classmate.classmateType.classmateType;
         currentStory = new Story(classmate.classmateType.inkJSONFile.text);
@@ -137,13 +140,13 @@ public class DialogueManager : MonoBehaviour
         switch (typeofClassmate)
         {
             case "JOCK":
-                currentConfidence = maxConfidence * GameManager.jocksStanding / 10 + 10;
+                currentConfidence = (maxConfidence * GameManager.jocksStanding / 10) + 20;
                 break;
             case "NERD":
-                currentConfidence = maxConfidence * GameManager.nerdsStanding / 10 + 10;
+                currentConfidence = (maxConfidence * GameManager.nerdsStanding / 10) + 20;
                 break;
             case "GEEK":
-                currentConfidence = maxConfidence * GameManager.geeksStanding / 10 + 10;
+                currentConfidence = (maxConfidence * GameManager.geeksStanding / 10) + 20;
                 break;
         }
         decayRateConfidence = 1;
@@ -168,12 +171,16 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitDialogueMode()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         dialoguePlaying = false;
         talkMenu.SetActive(false);
         dialogueText.text = "";
         PressSpace.text = "";
         faceUI.SetActive(true);
         timerBar.gameObject.SetActive(false);
+        askfriendButton.SetActive(false);
 
         classmate.ExitInteraction();
         classmate.GetComponent<Collider>().enabled = false;

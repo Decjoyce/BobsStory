@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public bool WeekChange = false;
 
     public static int jocksStanding, nerdsStanding, geeksStanding;
+    public int fakeJocksStanding, fakeNerdsStanding, fakeGeeksStanding;
     [SerializeField] private int startingstanding_Jocks, startingstanding_Nerds, startingstanding_Geeks;
 
     public PlayerEmotionalState emotionalState;
@@ -73,8 +74,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if(!menu)
+        if (!menu)
+        {
             ChangeRoom("Hallway");
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         else
         {
             if(weekText != null)
@@ -83,7 +89,14 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    private void Update()
+    {
+        fakeGeeksStanding = geeksStanding;
+        fakeNerdsStanding = nerdsStanding;
+        fakeJocksStanding = jocksStanding;
+    }
+
     public void ResetGame()
     {
         gameHasStarted = false;

@@ -1,4 +1,4 @@
-What's up? #face_player:happy #decay:1 #face_npc:sad
+What's up? #face_player:happy #decay:0.8 #face_npc:sad
 ->Choice01
 == Choice01 ==
     +[Hey there]
@@ -29,7 +29,7 @@ Thank you I guess #standing:2
 #confidence:-2
     +[What team do yous support?] #standing:-3
         -> Response02_02
-    +[Did yous see the games last night?] #standing: -2
+    +[Did yous see the games last night?] #standing:-2
         -> Response02_02
     +[Football is so dumb, am I right?] #standing:2
         -> PlayHolder
@@ -84,14 +84,14 @@ Man get a life. #end: #face_player:depressed
 Fuck ye! #end: #face_player:happy #face_npc:happy
 -> END
 == Response03_03 ==
-OH MY GOD! YOU ARE SUCH A LOSER! #end #face_player:depressed
+OH MY GOD! YOU ARE SUCH A LOSER! #end: #face_player:depressed
 -> END
 === Choice03_03_01 ===
 #end: #face_npc:happy #face_player:happy
 Ye its no biggie, its a small indie band.
 -> END
 == Choice03_03_03 ==
-Ok then? #end #face_npc:neutral #face_player:sad
+Ok then? #end: #face_npc:neutral #face_player:sad
 ->END
 === Choice03_03_02 ===
 Says the one with purple shirt and sandels.#end: #face_player:sad
