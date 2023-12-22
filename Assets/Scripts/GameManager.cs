@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using static PlayerStats;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] CameraManager camManager;
     bool gameHappening;
 
+    [SerializeField] TextMeshProUGUI weekText;
 
     //Effects
     [SerializeField] Animator fadeAnim;
@@ -71,7 +73,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         if(!menu)
-        ChangeRoom("Hallway");
+            ChangeRoom("Hallway");
+        else
+        {
+            if(weekText != null)
+            weekText.text = "Week " + (week + 1);
+        }
     }
     
     public void ResetGame()
